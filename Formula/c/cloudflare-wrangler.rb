@@ -1,18 +1,18 @@
 class CloudflareWrangler < Formula
   desc "CLI tool for Cloudflare Workers"
   homepage "https://github.com/cloudflare/workers-sdk"
-  url "https://registry.npmjs.org/wrangler/-/wrangler-4.4.0.tgz"
-  sha256 "82796f2da42d8a902caa5c9254ab2df86ad54600fb2052cbb930635a25f2a786"
+  url "https://registry.npmjs.org/wrangler/-/wrangler-4.6.0.tgz"
+  sha256 "3a78e673370cd45f158b9d44326621e42cc54d080652bb9bbc3873a607bd66b7"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "789294e9c02857266aeac0a9a07ca80b3b775c9b018eed18c33f1f844532e212"
-    sha256 cellar: :any,                 arm64_sonoma:  "789294e9c02857266aeac0a9a07ca80b3b775c9b018eed18c33f1f844532e212"
-    sha256 cellar: :any,                 arm64_ventura: "789294e9c02857266aeac0a9a07ca80b3b775c9b018eed18c33f1f844532e212"
-    sha256                               sonoma:        "5a66239ab5667bed761c05aba7bdfcc7f5a486e625ec2d6369b0fad14000c2d1"
-    sha256                               ventura:       "5a66239ab5667bed761c05aba7bdfcc7f5a486e625ec2d6369b0fad14000c2d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a82dc4d6bdac28003678ea05ff70b3d4d3b0849e72f5fa3f5bf86c6dff824ea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91c7cd92dc5ee7d0ea93bb3fa0b37384a373391ad32f22eed3d5186507a5a9ad"
+    sha256 cellar: :any,                 arm64_sequoia: "9de9a74654109d5493e6bbdaace1355fab49c7d0837cee033a24595a675e87e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "9de9a74654109d5493e6bbdaace1355fab49c7d0837cee033a24595a675e87e4"
+    sha256 cellar: :any,                 arm64_ventura: "9de9a74654109d5493e6bbdaace1355fab49c7d0837cee033a24595a675e87e4"
+    sha256                               sonoma:        "924b896cb6613df07737289b6fea3bac9be066580e996950b05858e84abb88aa"
+    sha256                               ventura:       "924b896cb6613df07737289b6fea3bac9be066580e996950b05858e84abb88aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9fb470846f6d9dd641ef9b3a6fb138fad5fbda9817487786754cc4d9b95b1e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d66b35279a4f41144ec2637f1b98a5fc633d76f33f99c66eef71485a4119518"
   end
 
   depends_on "node"

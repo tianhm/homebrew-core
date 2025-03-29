@@ -70,6 +70,7 @@ ansible-creator
 ansible-lint
 ansible@10
 ansifilter
+ansilove
 ant
 antidote
 antlr
@@ -974,6 +975,7 @@ exploitdb
 exult
 eza
 f2
+f3
 f3d
 faac
 faad2
@@ -1139,6 +1141,7 @@ g-ls
 g2o
 gabo
 gallery-dl
+gama
 gambit
 game-music-emu
 gammaray
@@ -1163,6 +1166,7 @@ gdbm
 gdcm
 gdk-pixbuf
 gdu
+geesefs
 geeqie
 gegl
 genact
@@ -1219,6 +1223,7 @@ git-split-diffs
 git-subrepo
 git-sync
 git-town
+git-who
 git-xargs
 gitbackup
 gitbucket
@@ -1504,6 +1509,7 @@ i2util
 iamb
 iamy
 ibazel
+icann-rdap
 icbirc
 icloudpd
 icon
@@ -1843,6 +1849,7 @@ libdap
 libdeflate
 libdex
 libdivide
+libdmtx
 libdnet
 libdom
 libdpp
@@ -2366,6 +2373,7 @@ nest
 nestopia-ue
 netaddr
 netcdf
+netcdf-fortran
 netfetch
 nethogs
 netlify-cli
@@ -3220,7 +3228,6 @@ sollya
 solr
 solr@8.11
 sonar-scanner
-sonarqube
 sonic
 sonobuoy
 sophus
@@ -3383,6 +3390,7 @@ tanka
 taplo
 tarantool
 tarlz
+tarsnap
 tartufo
 task
 taskopen
@@ -3569,6 +3577,7 @@ uftrace
 ugit
 ugrep
 uhd
+umka-lang
 unar
 unbound
 uncover
@@ -3581,6 +3590,7 @@ unicorn
 unison
 unisonlang
 universal-ctags
+unshield
 unxip
 uptimed
 urdfdom

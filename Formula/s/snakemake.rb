@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/87/2e/d648b4d5cf51dda88d603ef24099f3bcf18805d9dd6df3ededf8a4ab2064/snakemake-9.1.1.tar.gz"
-  sha256 "53d2ccef9f063e73975c1d8846ae1ed20595e323e81552013b282c25ffec6385"
+  url "https://files.pythonhosted.org/packages/ba/bf/0587a18f8582b8cdaab5135b4c62e0469284f6c4a9ccb80dd67c680170e7/snakemake-9.1.3.tar.gz"
+  sha256 "99448bf0785c83bede87948916301c3ce553eef77329c884f9709706606548a1"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9262a7ad89f7ea3b850b3691fbb64b6eac4615690fbd6fac4351204d793692dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "81b9d0e96fc1140ed08fc028c03a01c62b4263a145ebfa4ca9bf60bcea832729"
-    sha256 cellar: :any,                 arm64_ventura: "a2e4472a11a6d852a8c2a584863af6bc14a3836069fe798120a72e3046ccfbec"
-    sha256 cellar: :any,                 sonoma:        "c993e9b858c72742114f280b791bd664df83b9259db28330b9255c7cafff4fea"
-    sha256 cellar: :any,                 ventura:       "e24858a6b284c33f505805982c5f3bcbcca9c0e46faefe870f43e553896ae6a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c14ed019f4e11c5ebd705b2aacc003c732475e0ff8d5b08eccf7db771468a4fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3409d0b597a3093fa7d25800eb5575fb19416fd1165a2f654ef766b2843154ba"
+    sha256 cellar: :any,                 arm64_sequoia: "3665701dd30981bdbe49da502d54e8b02e8c32d88254e23c66c76c09dc14de49"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cd7f37088750e84ad3b318f93f380558d013506ece72b43a6e07a3c725dd131"
+    sha256 cellar: :any,                 arm64_ventura: "6f9669270558ddac5222cefe8097d83b9047ba624463b46eba320fb049c583f2"
+    sha256 cellar: :any,                 sonoma:        "fcc50bb4691d6d7dbc6f6e1e8d552e8e64cc3758591c07fa74b0a7dd785b44ea"
+    sha256 cellar: :any,                 ventura:       "70a196bfcc07dd602dc56ac0026336329b35cc45655842054ed7675af7ae6181"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63c3b4893d2c748e86e7bffe394a1b66c5caf7270d1c17824d484bc93446c932"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47b83073ef90aad7f156de17856c802848ddc9ec92400c3fe467e8184c7da171"
   end
 
   depends_on "rust" => :build
@@ -175,8 +175,8 @@ class Snakemake < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
-    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
+    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
+    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
   end
 
   resource "smart-open" do
@@ -195,8 +195,8 @@ class Snakemake < Formula
   end
 
   resource "snakemake-interface-executor-plugins" do
-    url "https://files.pythonhosted.org/packages/14/61/89ba9c8a79fea4a2df16765f3cde721ff99d369ebce7e16f51f9bc246cb9/snakemake_interface_executor_plugins-9.3.3.tar.gz"
-    sha256 "11e59af04bf00e9aaee7f0b99f9358910becfccdad7b18a455d37601f6d8d2ea"
+    url "https://files.pythonhosted.org/packages/61/9d/ca71ec355208cb3f4b2dfb590a09f5081b17e6272cdb904c97de5ee93996/snakemake_interface_executor_plugins-9.3.5.tar.gz"
+    sha256 "483b4c6b70f92170c4d87cfe213fad4ecab58abfeaee1ec428d3403026745265"
   end
 
   resource "snakemake-interface-logger-plugins" do
