@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://github.com/dolthub/dolt"
-  url "https://github.com/dolthub/dolt/archive/refs/tags/v1.50.9.tar.gz"
-  sha256 "b28401dc364577de54d361864ce738143da0faf6a4db2811666b24c84413ad37"
+  url "https://github.com/dolthub/dolt/archive/refs/tags/v1.51.1.tar.gz"
+  sha256 "3f30a601f379dab357a697e4bd78b1a31a5f127d66c452f75b2e071c40636568"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bfe94020846a9df66e4670be4f16fc0958a089cf331cfd9a7db854cc687de3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9079495162dfa4d5bc32dbce07c806b9997131b2c32540217f08c81903b4dae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10b0b42bfb9dec62fecfc00e0300afe3197db5f87dd209916406a39413186c8a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "616d575f53915772324ccf7320a6598e119c67539e2e6e7f32951d709fe94250"
-    sha256 cellar: :any_skip_relocation, ventura:       "7411a2db9ec1d4dfa56b57917b0e84609bbbf8ebc5d6abc0b11f6139dcd95a78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aa08275c39350841b068753b16a81c5b2541d7a0e95e0a851b069e3008b5c85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e6b99ce4a1c846cc4a193ad8abb3dfd977b7aeab8d4d14126d0f1c2c0499128"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11330c993d2ac815db9f0c7179cd1bf59b6a80638f4643f55ab24d4dc67d2999"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "112be1fe425bbe5a99db7a79fa77b33925996ad0fc86e536eef72726e4a5075a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "867fa6ec74e3f7582f45659b412d464a156ffa3df87d7f8e4d44498ce63b2b08"
+    sha256 cellar: :any_skip_relocation, ventura:       "f85d1e3201dbbb9b35e702a7e27813a261a532169d7f7c95f1e414bd4f669ea1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06e3bbf313c95ffeb99448de7785b92ff09d5f5859e8ee7e9898b2778795777a"
   end
 
   depends_on "go" => :build
@@ -25,6 +25,19 @@ class Dolt < Formula
     chdir "go" do
       system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/dolt"
     end
+  end
+
+  def post_install
+    (var/"log").mkpath unless (var/"log").exist?
+    (var/"dolt").mkpath
+  end
+
+  service do
+    run [opt_bin/"dolt", "sql-server"]
+    keep_alive true
+    log_path var/"log/dolt.log"
+    error_log_path var/"log/dolt.error.log"
+    working_dir var/"dolt"
   end
 
   test do

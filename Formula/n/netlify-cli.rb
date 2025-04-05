@@ -1,18 +1,19 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-19.0.3.tgz"
-  sha256 "6295f094cd72e1319b4b87a9a6a222e96c5f1a8e426ef460fa39afb602fa16f5"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-19.1.5.tgz"
+  sha256 "010c1a12ed2834e2838ffb9847e4493ebe112bbacde6a6a709df22b094aa6852"
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "043c3b6f4709fe93cf826c69f756a3e6ab9b5715f64fffa1f611fb34bc15d4fb"
-    sha256                               arm64_sonoma:  "09a169c2b548df28d1dc5d4c3873b62c4686fc24a2a4f39e2dda8a772e79c6be"
-    sha256                               arm64_ventura: "466967f08530358219e171a79a296d6155621fca96ab82409a4667d6c3795b8c"
-    sha256                               sonoma:        "cd0a8609562050a0d1fcb924f73da462982e9e22d7afe7ef761f255abd3b806c"
-    sha256                               ventura:       "3c3bcf39e40e42e45f68c713877155b2eab59d0bf13e2d7f6b36aeb23c91e5a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4674a56e235fe1e3138697ac60a9f817249cf46a122f3971dc889ed3f30dac11"
+    sha256                               arm64_sequoia: "c19758d8e68480a2ae6bd7f25c5b6ece2367b25209eefc5a580d653a294bfbac"
+    sha256                               arm64_sonoma:  "2c70edc1c565e9895f06649cd7b4a05a0ccc7c7a31578b451eae91798d5d6acc"
+    sha256                               arm64_ventura: "07ba802c1cceeda2363e36812ebe8029dfa57f380fd93d6928685eb85929e6c7"
+    sha256                               sonoma:        "69ce4c66baf5ecfe96c9053c88844d54d8d2e406f3179d5a35dd08c0ef063a26"
+    sha256                               ventura:       "421877f4bf6e3a12d727a8748befc0c8a4b5cbaed6fd3df420cc6f9af52f8ee9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f90e96c93cba85c9a7ebd983855594df35f8277180033843d14e3c383ebfceb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e920549abe14634c142cd93aa2c71dfa33ef26c0bc7e5b6680675765d3e21f3a"
   end
 
   depends_on "node"

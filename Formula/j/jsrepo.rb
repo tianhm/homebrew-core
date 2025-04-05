@@ -1,18 +1,18 @@
 class Jsrepo < Formula
   desc "Build and distribute your code"
   homepage "https://jsrepo.dev/"
-  url "https://registry.npmjs.org/jsrepo/-/jsrepo-1.45.1.tgz"
-  sha256 "eb5b217996256b0bb705ec735a019f6392a13d5196f4387ae0f5fed044914504"
+  url "https://registry.npmjs.org/jsrepo/-/jsrepo-1.45.3.tgz"
+  sha256 "73c40bb50726d2d2f1767bd02a3bfeb694fe62c386361799a3db107251b489ee"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "851e3d0b3c9e24dc96e875c2449ddad5c130194945a4d59cb87ee127f8c2b2a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "851e3d0b3c9e24dc96e875c2449ddad5c130194945a4d59cb87ee127f8c2b2a1"
-    sha256 cellar: :any,                 arm64_ventura: "851e3d0b3c9e24dc96e875c2449ddad5c130194945a4d59cb87ee127f8c2b2a1"
-    sha256 cellar: :any,                 sonoma:        "d53873767ad0228a6c76d120fc92767dd375d022491c9db49fce276a5df296fb"
-    sha256 cellar: :any,                 ventura:       "d53873767ad0228a6c76d120fc92767dd375d022491c9db49fce276a5df296fb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9850b8008468f5475b2da08aa0f7939ea457fcc93e086ef392e7e9c7a4cfefb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea7c16f06e20a6d32f7a1a2b8755b0437f64afd5067773789262962f00f92a29"
+    sha256 cellar: :any,                 arm64_sequoia: "6a6ecb482380eb8fd5e00188b91c8ef994000190a0789d10e9e6c9725ee5fb1a"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a6ecb482380eb8fd5e00188b91c8ef994000190a0789d10e9e6c9725ee5fb1a"
+    sha256 cellar: :any,                 arm64_ventura: "6a6ecb482380eb8fd5e00188b91c8ef994000190a0789d10e9e6c9725ee5fb1a"
+    sha256 cellar: :any,                 sonoma:        "bfb5b56acf49ba51a68b7433b0bfc741609d8ee8f8b438c01aced4f7e62e493d"
+    sha256 cellar: :any,                 ventura:       "bfb5b56acf49ba51a68b7433b0bfc741609d8ee8f8b438c01aced4f7e62e493d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfab95b71f3fb620fdd7ebc2c5571046887867a9714e801c774d074a12ff8f4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43c1f5eb63ede57f96cad8e5ea411f1487d4252ab6b095ff4f82a4482ecec52e"
   end
 
   depends_on "node"

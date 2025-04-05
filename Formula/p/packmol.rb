@@ -1,8 +1,8 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
   homepage "https://www.ime.unicamp.br/~martinez/packmol/"
-  url "https://github.com/m3g/packmol/archive/refs/tags/v20.16.1.tar.gz"
-  sha256 "2984c57f3729ac9c2659a3ce88a4420f2fb5f422fec2b49a081bf0ac5474245c"
+  url "https://github.com/m3g/packmol/archive/refs/tags/v21.0.1.tar.gz"
+  sha256 "554a8a88348ad82b46e6195ff7c7698356b4a5a815c4f1c8615ef1b0651a5b9e"
   license "MIT"
   head "https://github.com/m3g/packmol.git", branch: "master"
 
@@ -12,15 +12,16 @@ class Packmol < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6eb3c35cd1a8d58b488850c7338e0aff09abfd931c31d8a271200b72cc32f5dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "02eeeda6b6fb3893af6e67e4ef7eb36bc0a9da0bab889762c2682a6a3b3857ab"
-    sha256 cellar: :any,                 arm64_ventura: "e5cee14accfb1add0bf05e6029cef4dd31e6fbb7bbc8446eb76942e4bd5b1337"
-    sha256 cellar: :any,                 sonoma:        "2cc6974a4d92632a5d6b8361389c0df9acc349621295315a13220658d09dd7e0"
-    sha256 cellar: :any,                 ventura:       "04bbb576e2bda906234d4d52945f0537c91c39f170ef01c739b2050fac1aeaf6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "368f18f1021be07bc6f7355610babbdf1d38e578cbbfc7d72ecd1faaef3d2f1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d04056434173fec7d1ca461ec4dc312a0322116b84a21280cdc5fc080c25f3fd"
+    sha256 cellar: :any,                 arm64_sequoia: "9b0641c064fc6d174e23ad1433132c05b311ad2d7a1475fa579e17f3834e3a7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee5df83457537a0d44f8162ad900f86e0e18315f53ba4b6088ab25d6d7f599f1"
+    sha256 cellar: :any,                 arm64_ventura: "472868d489b997ec8575cdf57e6aeb37a0a4345a477c791006c28eb5988ff757"
+    sha256 cellar: :any,                 sonoma:        "5aba746b30fcb9eadbd420d38b09e53f110bb20d432202218e26179e0bfff166"
+    sha256 cellar: :any,                 ventura:       "3eb9fadee74075806473da5f09dea1818d2cfedc02a5724dfc0d76269d1d43b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf532a78652a05fd8d6a319738ddd5d76aab84df7f344d881e4c6b0aeafe3b5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "855f3fc3112ab28a9ad69f7064b874e75e5a23deea3e4cdd7e73e60315d817af"
   end
 
+  depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
 
   resource "homebrew-testdata" do
@@ -28,13 +29,17 @@ class Packmol < Formula
     sha256 "97ae64bf5833827320a8ab4ac39ce56138889f320c7782a64cd00cdfea1cf422"
   end
 
-  def install
-    # Avoid passing -march=native to gfortran
-    inreplace "Makefile", "-march=native", ENV["HOMEBREW_OPTFLAGS"] if build.bottle?
+  # support cmake 4.0, upstream pr ref, https://github.com/m3g/packmol/pull/94
+  patch do
+    url "https://github.com/m3g/packmol/commit/a1da16a7f3aeb2e004a963cf92bf9e57e94e4982.patch?full_index=1"
+    sha256 "5e073f744559a3b47c1b78075b445e3dd0b4e89e3918f4cbf8e651c77b83d173"
+  end
 
-    system "./configure"
-    system "make"
-    bin.install "packmol"
+  def install
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "solvate.tcl"
     (pkgshare/"examples").install resource("homebrew-testdata")
   end

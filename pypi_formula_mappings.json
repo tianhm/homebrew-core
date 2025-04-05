@@ -350,7 +350,13 @@
   "gallery-dl": {
     "exclude_packages": ["certifi"]
   },
+  "gamdl": {
+    "exclude_packages": ["certifi", "pillow"]
+  },
   "gcalcli": {
+    "exclude_packages": ["certifi"]
+  },
+  "gdown": {
     "exclude_packages": ["certifi"]
   },
   "ggshield": {
@@ -376,6 +382,7 @@
   },
   "gnuradio": {
     "package_name": "",
+    "exclude_packages": ["rpds-py"],
     "extra_packages": [
       "click", "jsonschema", "lxml", "mako",
       "packaging", "pygccxml", "pyyaml", "setuptools"

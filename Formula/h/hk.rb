@@ -1,19 +1,19 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https://hk.jdx.dev"
-  url "https://github.com/jdx/hk/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "95d60d6c97ed37618f51eee7891f60c3fbda47645a9244d8d6aeffa1ac578b25"
+  url "https://github.com/jdx/hk/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "7e92695a18c29fd8f72bec89b33d851e5cef8ec0c3049def47025126b02713c2"
   license "MIT"
   head "https://github.com/jdx/hk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aedba5e7fd3fc6a617d1224f35b406b85dfeb23f38b530c6dabcbe61b02fa361"
-    sha256 cellar: :any,                 arm64_sonoma:  "58402d2fa775c81e61e53e2eda20ff2d7011084fa7f0b3b1e494e68f48f5c870"
-    sha256 cellar: :any,                 arm64_ventura: "330a0df96ae33f7043124443fb3e706f5f39dc5803f0cd8671bbe2558fed99da"
-    sha256 cellar: :any,                 sonoma:        "a08e8dcd0b98b982d90a036b6c5edc3adf6e05631ed9280c54e95587f7598ec3"
-    sha256 cellar: :any,                 ventura:       "479ff1ec13cf7dd6edf74120c57a4f06df5f5af9ce9d4b59012cd1bc56a408b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2efc2be806718ea3cb05b60d78f335c1b72f4b9cb96b5798deaf84c2590108bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6bcc8e2b323304be3bdc96644539a17e31a648e59402b44cc6c797c59df196"
+    sha256 cellar: :any,                 arm64_sequoia: "9d68449a7652c810e5ead3e58f2c0300c5e3895c37c2a4a61fef43a4fcafeebc"
+    sha256 cellar: :any,                 arm64_sonoma:  "10c008271aa789f7ffe811df034882d98e17a3158a158800c3c56eb8f23d384b"
+    sha256 cellar: :any,                 arm64_ventura: "9e1772794561182f56058b73f3fab4a7b9f0b5b493326804997a10440fa17a8c"
+    sha256 cellar: :any,                 sonoma:        "c3a61397fb38055dee16b5070ba59d6c159ba1b9fd22240a6058b5816e78b776"
+    sha256 cellar: :any,                 ventura:       "33bb57054865c85dbe3646ff66daaf1dd9e1f9a7f46d16455b3e57572214857b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c576ee8a8d0eb8c4f995084eeb0cec6e630ec2c8b7f164b8178ac4091cdb7e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d9834d3e4953edfc4931ded84ac5dc92e4225bbc373a57a3fc635522bd6aa0"
   end
 
   depends_on "rust" => [:build, :test]
@@ -38,15 +38,11 @@ class Hk < Formula
 
     (testpath/"hk.pkl").write <<~PKL
       amends "package://github.com/jdx/hk/releases/download/v#{version}/hk@#{version}#/Config.pkl"
-      import "package://github.com/jdx/hk/releases/download/v#{version}/hk@#{version}#/builtins/cargo_clippy.pkl"
-
-      linters {
-        ["cargo-clippy"] = new cargo_clippy.CargoClippy {}
-      }
+      import "package://github.com/jdx/hk/releases/download/v#{version}/hk@#{version}#/builtins.pkl"
 
       hooks {
         ["pre-commit"] {
-          ["fix"] = new Fix {}
+          steps = new { ["cargo-clippy"] = builtins.cargo_clippy }
         }
       }
     PKL
@@ -55,7 +51,7 @@ class Hk < Formula
     system "git", "add", "--all"
     system "git", "commit", "-m", "Initial commit"
 
-    output = shell_output("#{bin}/hk run pre-commit --all -v 2>&1")
-    assert_match(/cargo-clippy\s* ✓/, output)
+    output = shell_output("#{bin}/hk run pre-commit --all 2>&1")
+    assert_match "cargo-clippy", output
   end
 end

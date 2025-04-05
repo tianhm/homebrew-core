@@ -1,18 +1,18 @@
 class B3sum < Formula
   desc "Command-line implementation of the BLAKE3 cryptographic hash function"
   homepage "https://github.com/BLAKE3-team/BLAKE3"
-  url "https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.7.0.tar.gz"
-  sha256 "59bb6f42ecf1bd136b40eaffe40232fc76488b03954ef25cb588404b8d66a7e0"
+  url "https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.1.tar.gz"
+  sha256 "fc2aac36643db7e45c3653fd98a2a745e6d4d16ff3711e4b7abd3b88639463dd"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc662b47799c127022e71d604a3ac7efccc23efb98ab49b1f4d8e29a8bebd9c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a74d75b8d2ffb37176fb2ed223ac8e6079a005837f92e17c17d437bed173016"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5ab6625d37db481615f66d238f7a4783a5899e9ded037657580ed4ad30054cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d942581b73802e665d8edbeb6f9c058e3a57fa0d07a2e85b03e828302847a5ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "97758b5713002a547f370893ac4cbb02fc0c9749bd229f31787be1395a048865"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "363ed4a8516f7d23ddab6de6fbe8a02efd7f1ea136a818260e838627eae250bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f12bd1b3f6b33e1a74c494ba410e0416a5b5b9a237618747621164dc9cd5ad63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f46b779fc019d3bcbaa9e59d73cc5931ccb60624fe072650622169d0320e20cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab916b2964da945abe2852bf7efb1011e185e33a9f62e90b3bb13007df18caee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a928cc6f69417e59d7171e059bebc5e75548b6c3448659d3e1864de8f02289a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "563d2c084f78d2164c14124293357cfbe947f46279befb0cfa752176de2d348b"
+    sha256 cellar: :any_skip_relocation, ventura:       "e03c959d5a2a24c6202e52cd9f23f2978b2f2c2a5c991f5d4ac91e636228854e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1fa3cab025e41c22583381feafabbecf11bd84086cd75dcc757875444234e16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40c69ea20e5e51324aea5d049a2a5f9bdca64030604be9bfb2b4b8f53134e32b"
   end
 
   depends_on "rust" => :build

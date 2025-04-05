@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/ce/6a/9d4ff736d56ac9ad47e61c2e85ca23327221a6f4d24f826f4316b9fa6c72/esphome-2025.3.1.tar.gz"
-  sha256 "eb736050737b7192047e27d25a6ed077fdf08d1ba3dd932da95493abb5f2b7af"
+  url "https://files.pythonhosted.org/packages/e5/29/9c5b018160e0752d3cd7f33d05ca2b1245fd7a577b792f3c636d982e4c70/esphome-2025.3.3.tar.gz"
+  sha256 "5f50415f0d6ff24b81711873116b71011e16d1c620c10239d6ee3d35f7e3b282"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e84bbad6dff112b04de6c35d5aba3182dc04221803b7c99490e21a6f48342251"
-    sha256 cellar: :any,                 arm64_sonoma:  "7dd783e8e9e5b565778b9dbc7a0f959b872eab028a293fc65222aec797cae9bf"
-    sha256 cellar: :any,                 arm64_ventura: "ed94528d1a450ef9f90e43d4114bb1829ba4ace5354cac9cf555032579d9372f"
-    sha256 cellar: :any,                 sonoma:        "f71fbb317d71bc7f5aa9069f722bca9bcc02339c52fc29d64ded6f8a350afa28"
-    sha256 cellar: :any,                 ventura:       "04324164f941eca4274c14fdb2ca5c715c49014479b1e2549452336c916ece28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8772334801aa625b728043ceb0db7ba5db3796772764e4740a6fa021ebfe9448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b57f450e36318fd459241f90b8e433c0a8e22bb7265819daa02fb2812d04aa61"
+    sha256 cellar: :any,                 arm64_sequoia: "612031743e74f01218a4a9459169abd7792c64c307d3c34f273a1a3cea3a3cc1"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd7692a8740af6951e964dfbec9b336d19c1c6d280d9a1da069ccabb083883ab"
+    sha256 cellar: :any,                 arm64_ventura: "6bd366d4e13c40af2d582341edc4c3545ae68c9d2bf193f03853e4b79bed0ef1"
+    sha256 cellar: :any,                 sonoma:        "bdedfecf44f8813207c202f295718548dd0d3d53f57acc68e6c282d110553620"
+    sha256 cellar: :any,                 ventura:       "cd1a7a57b82da7bd75edae4e235cb76663c12f002f7d672b7eb056740e44dbeb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "447923a8aa2205b0db8bb93d11cb3b2576566760ec7d7533f9d2d0bbd3959411"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "759e2c1143abcfb049f547093bfe7b39e802ee619a7dceaae687cabaeb8228d1"
   end
 
   depends_on "certifi"
@@ -54,8 +54,8 @@ class Esphome < Formula
   end
 
   resource "bitarray" do
-    url "https://files.pythonhosted.org/packages/70/e2/b80354798b87e4b6918ba0ad71d30da3e14c83ea38cb4a4e609d49501dd3/bitarray-3.2.0.tar.gz"
-    sha256 "f766d1c6a5cbb1f87cb8ce0ff46cefda681cc2f9bef971908f914b2862409922"
+    url "https://files.pythonhosted.org/packages/93/34/ce4e18fb096083b9e1b9d0ac5750aecc8ba2e8047b3096b9ee1c52b72ae6/bitarray-3.3.0.tar.gz"
+    sha256 "044909ce63b77adf5739de40e2f621473453e9d4bdb913ef2d14c185a4532ce7"
   end
 
   resource "bitstring" do
@@ -169,8 +169,8 @@ class Esphome < Formula
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/55/de/8216061897a67b2ffe302fd51aaa76bbf613001f01cd96e2416a4955dd2b/protobuf-6.30.1.tar.gz"
-    sha256 "535fb4e44d0236893d5cf1263a0f706f1160b689a7ab962e9da8a9ce4050b780"
+    url "https://files.pythonhosted.org/packages/c8/8c/cf2ac658216eebe49eaedf1e06bc06cbf6a143469236294a1171a51357c3/protobuf-6.30.2.tar.gz"
+    sha256 "35c859ae076d8c56054c25b59e5e59638d86545ed6e2b6efac6be0b6ea3ba048"
   end
 
   resource "puremagic" do
@@ -184,8 +184,8 @@ class Esphome < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/8b/1a/3544f4f299a47911c2ab3710f534e52fea62a633c96806995da5d25be4b2/pyparsing-3.2.1.tar.gz"
-    sha256 "61980854fd66de3a90028d679a954d5f2623e83144b5afe5ee86f43d762e5f0a"
+    url "https://files.pythonhosted.org/packages/bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz"
+    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
   end
 
   resource "pyserial" do
@@ -244,8 +244,8 @@ class Esphome < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/43/0f/fa4723f22942480be4ca9527bbde8d43f6c3f2fe8412f00e7f5f6746bc8b/tzdata-2025.1.tar.gz"
-    sha256 "24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694"
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "tzlocal" do
