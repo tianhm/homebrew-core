@@ -272,6 +272,7 @@ bear
 beautysh
 bed
 bee
+behaviortree.cpp
 bench
 bender
 benthos
@@ -542,9 +543,11 @@ clang-build-analyzer
 clang-format
 clang-uml
 clangql
+clarinet
 claws-mail
 clazy
 clblast
+clearlooks-phenix
 clhep
 cli11
 cli53
@@ -557,6 +560,7 @@ clinfo
 cling
 clingo
 clipboard
+clive
 cljfmt
 cloc
 clojure
@@ -625,6 +629,7 @@ comtrya
 conan
 conan@1
 concurrencykit
+conda-lock
 conda-zsh-completion
 conduit
 conftest
@@ -635,6 +640,7 @@ contentful-cli
 convco
 convmv
 convox
+cookcli
 cookiecutter
 copa
 copier
@@ -917,6 +923,7 @@ dynare
 dynein
 dysk
 dzr
+e2b
 e2fsprogs
 e2tools
 earthly
@@ -945,6 +952,7 @@ ejabberd
 ejdb
 eksctl
 elan-init
+eleventy
 elfutils
 elfx86exts
 elixir
@@ -1689,6 +1697,7 @@ joker
 jolie
 joplin-cli
 jose
+jove
 jp2a
 jpeg-turbo
 jpeg-xl
@@ -1759,6 +1768,7 @@ keploy
 kepubify
 kerl
 kew
+keychain
 keydb
 keyring
 kfr
@@ -1798,6 +1808,7 @@ ksh93
 ksops
 ktexttemplate
 ktfmt
+ktoblzcheck
 ktor
 kty
 kube-bench
@@ -1821,6 +1832,7 @@ kubergrunt
 kubernetes-cli
 kubernetes-cli@1.30
 kubernetes-cli@1.31
+kubernetes-cli@1.32
 kubescape
 kubeseal
 kubeshark
@@ -1872,6 +1884,7 @@ leaf-proxy
 leakcanary-shark
 lean-cli
 leapp-cli
+ledit
 leetcode-cli
 leetgo
 leetup
@@ -2195,6 +2208,7 @@ lucky-commit
 ludusavi
 luit
 lume
+lunar-date
 lune
 lunzip
 lutok
@@ -2411,6 +2425,8 @@ multi-gitter
 multitail
 muon
 muparser
+mupdf
+mupdf-tools
 murex
 musikcube
 mutt
@@ -2565,6 +2581,7 @@ oauth2_proxy
 oauth2c
 oauth2l
 objfw
+observerward
 ocaml-findlib
 ocaml-zarith
 ocamlbuild
@@ -2792,6 +2809,7 @@ php@8.1
 php@8.2
 php@8.3
 phpmyadmin
+phpstan
 phpunit
 phylum-cli
 pianobar
@@ -2900,6 +2918,7 @@ procps
 procs
 profanity
 proftpd
+prog8
 proj
 projectable
 prometheus
@@ -3098,6 +3117,7 @@ riemann
 riemann-client
 rio
 rip2
+ripgrep-all
 ripsecrets
 riscv64-elf-gcc
 risor
@@ -3785,6 +3805,7 @@ vapoursynth
 varnish
 vault-cli
 vc
+vcftools
 vcluster
 vcsh
 vdirsyncer
