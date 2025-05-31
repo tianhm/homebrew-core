@@ -1,18 +1,18 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
   homepage "https://github.com/redpanda-data/benthos"
-  url "https://github.com/redpanda-data/benthos/archive/refs/tags/v4.50.0.tar.gz"
-  sha256 "66006425c6f45a3b34251a2e4d88fb77058cdd9c490b93d83faa1e2b38d5357c"
+  url "https://github.com/redpanda-data/benthos/archive/refs/tags/v4.52.0.tar.gz"
+  sha256 "9a9db919569287a7cef2efb7bed990883c62db6694469529439f8e5c34f959b4"
   license "MIT"
   head "https://github.com/redpanda-data/benthos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "276285c2319a693c806b417bdbf643ece58878623a42d6270c5dd5d38efdc3a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "276285c2319a693c806b417bdbf643ece58878623a42d6270c5dd5d38efdc3a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "276285c2319a693c806b417bdbf643ece58878623a42d6270c5dd5d38efdc3a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5f54e27c006b635249025a761d2c719f554ab04479004b67fdc9b7eabc705ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5f54e27c006b635249025a761d2c719f554ab04479004b67fdc9b7eabc705ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ef365a0cb1ea4e964f43870e451cd374792a025e0ad5de45ddf37e96a90a3b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a799c55fa8039592fb4d8c042077f73da05aa00014e4e0cb453fc6f8c767023"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a799c55fa8039592fb4d8c042077f73da05aa00014e4e0cb453fc6f8c767023"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5a799c55fa8039592fb4d8c042077f73da05aa00014e4e0cb453fc6f8c767023"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd32808c282d66ec21aa523786fa3957a3c53c1ee1a2a3ad97e6271ba6962370"
+    sha256 cellar: :any_skip_relocation, ventura:       "cd32808c282d66ec21aa523786fa3957a3c53c1ee1a2a3ad97e6271ba6962370"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af417f9d1515d043c58f7818d8fe9e2bd7c7f263572462b258944e18c0f9dd46"
   end
 
   depends_on "go" => :build
