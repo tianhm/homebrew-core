@@ -1,23 +1,28 @@
 class KubectlAi < Formula
   desc "AI powered Kubernetes Assistant"
   homepage "https://github.com/GoogleCloudPlatform/kubectl-ai"
-  url "https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "d4547d69a2b1014ed23989349eb210829373d43b94514896d2d4fecb6bb3488a"
+  url "https://github.com/GoogleCloudPlatform/kubectl-ai/archive/refs/tags/v0.0.11.tar.gz"
+  sha256 "15fd892b06b2b992d96024c7880869ea929f535153fe743de7e0a4088e702aa1"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecddd7b1d507131d8eee3d2d0d96a752328c8e8b36eca148d3e9358a97f1699c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecddd7b1d507131d8eee3d2d0d96a752328c8e8b36eca148d3e9358a97f1699c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ecddd7b1d507131d8eee3d2d0d96a752328c8e8b36eca148d3e9358a97f1699c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22491d946f000e2cc97310fba5748fcdb955f49635ba4556b7927dad682fd69d"
-    sha256 cellar: :any_skip_relocation, ventura:       "22491d946f000e2cc97310fba5748fcdb955f49635ba4556b7927dad682fd69d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e894616c1423a4a1a75ddcee5782445bf4d6ddfd5e93b7efa1239baf9ee4b7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e8e865c902c74ade666ae2b0856ab64d0638061c0df24347cfd91c76e0782cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e8e865c902c74ade666ae2b0856ab64d0638061c0df24347cfd91c76e0782cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e8e865c902c74ade666ae2b0856ab64d0638061c0df24347cfd91c76e0782cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "abec5a1c68d2e1b1a3c7677883515a72f115878b2691b5569d60c1ebf8be0195"
+    sha256 cellar: :any_skip_relocation, ventura:       "abec5a1c68d2e1b1a3c7677883515a72f115878b2691b5569d60c1ebf8be0195"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aef37269709afc0e92ac134901e6600241a3d028af29f2aa78432705352e48ed"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd"
   end
 
   test do

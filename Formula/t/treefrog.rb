@@ -12,17 +12,18 @@ class Treefrog < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "e42ddfe0fa827d1f960ad9ebf94515bdd1e6515c84fa3a466e309118870da58d"
-    sha256 arm64_ventura: "46ea6cafe756b381432a53c52cad8bd19f4066ad6ebb5af04ff6371cc0f7cfdf"
-    sha256 sonoma:        "dd238ea3df08da065ff476dbe01bd9620dedc69da885c4554b7eda53b6a63ab1"
-    sha256 ventura:       "4f29217b878dc7e40a20db0704a4273798dc429f72c86595baa882bd39eca03a"
-    sha256 x86_64_linux:  "5d9f3deacba06b0fee54e42f69653d224caad91c4feb04100982237401f8f5fe"
+    rebuild 1
+    sha256 arm64_sonoma:  "f2825d2ef758a6cce393ddaced7e37ae897e877a86ce82b548dffbb927cb807e"
+    sha256 arm64_ventura: "4da1bedaf0b5cf8d0a1f2110364135c5e64e6b6deaf47f304c0fac3c157a7a8b"
+    sha256 sonoma:        "c4311133c3732ccb18444b67bbcffea4057fa335b6c0ebe0770f437a6bd3fd07"
+    sha256 ventura:       "b135ece7a7e0c032d7ee9d2f67def883db2a9bfe5692a13e40b3201832339911"
+    sha256 x86_64_linux:  "86f4c5dfc21a7914dd2df54ed293ad06a667da0bab9920a1779a31debc2ae291"
   end
 
   depends_on "pkgconf" => :build
   depends_on "glog"
   depends_on "lz4"
-  depends_on "mongo-c-driver"
+  depends_on "mongo-c-driver@1"
   depends_on "qt"
 
   def install

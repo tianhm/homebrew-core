@@ -7,13 +7,14 @@ class Fastnetmon < Formula
   revision 4
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e99bfab39b5215fb2bd7ef02f0f716c9db020d0c108d658a0c8034cd619e0c0e"
-    sha256 cellar: :any,                 arm64_sonoma:  "76a6b96a13afb8d0e680091bdb5264b7df56547581907e34ba426c5e5cf6830d"
-    sha256 cellar: :any,                 arm64_ventura: "6e89014d50e782f57b686af3d0ae73d88da319a9f117f87dbde7657a11526925"
-    sha256 cellar: :any,                 sonoma:        "50a4589d8725403b4b8929fb0b4e1c7adf7c699bd52bb376b0c6f0a50c9084d5"
-    sha256 cellar: :any,                 ventura:       "3cc79f1f1333fbf40439a6086fecf80a5b8b74dcac8fad203ea915d1b8a77193"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f39c5e75613c10bd713b9ebb34e0add4af5d49120197bba4a380ed7e4a90c0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b8a1faccbd8e54415cecd622da4a857d3d15051188f2c5e33ad73af13268996"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f4506333091bc2b7f411036653fc5c38c0199c5f1574428d3e2997b3544590a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1c71b67e629ac3d0cc7c0b62a49db674c8cbb1a3490704a905833e2b8c215f7"
+    sha256 cellar: :any,                 arm64_ventura: "9fc42a552971a46f1693dbde02bedd0797933cfa46afa454394081f89044d9ae"
+    sha256 cellar: :any,                 sonoma:        "59cc7742ab620df495effb1171ff0a2c8c2379d98e9b0f8ea818c1e5409e942d"
+    sha256 cellar: :any,                 ventura:       "1472b494720fc815fa6a9dbb285545938c3788183307b0dc9571a04cf89cd768"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "797bcc708b202c7edabff39b6e669748ade9c84c569da4eb22995ddeffd0e837"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f08cdd1ebcaa5b531785123c66e3b5ed3a20793b83eb0b4bd80f28a1cdf16b03"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +25,7 @@ class Fastnetmon < Formula
   depends_on "hiredis"
   depends_on "log4cpp"
   depends_on macos: :big_sur # We need C++ 20 available for build which is available from Big Sur
-  depends_on "mongo-c-driver"
+  depends_on "mongo-c-driver@1"
   depends_on "openssl@3"
   depends_on "protobuf"
 

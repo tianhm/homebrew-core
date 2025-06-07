@@ -1,19 +1,19 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://github.com/Canop/broot/archive/refs/tags/v1.46.3.tar.gz"
-  sha256 "c09a3740c1e2f18ad9159c78fc31c70900bb72069d918e90cff44b6139316492"
+  url "https://github.com/Canop/broot/archive/refs/tags/v1.46.5.tar.gz"
+  sha256 "730f07fd8450476204878f42c27b1db4f965053c2da5a602eae8f2764c5b92ce"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9f19a8e58bc1230820839e01acb459ef6a768839e217d3d2cc7c7e6006b2034"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1e051ca383c6d81b597f4a5021735e18a6269a431e58e473e0d712e7f7d2d7c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "853f511d7dd1b2b5a89c98830434bb7fbae5895d0ebcb99e9b8a0c3c72066eb8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a09ce8f7f97f9586a19c9c143be76130d4c3eceab94ad7803bb8af3811f0ad7"
-    sha256 cellar: :any_skip_relocation, ventura:       "019d357134b57bba980be77ca7e5ebb7111e929690bbd704eccf61756c532f9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4775fdcc3530483d6d0d401d184c82e229651ad0e229d98a351f51c7a4e20ea9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d1525ff9bdcc8cc0733020fc9a471a2292882a0db0f28e38bcdc33f80d14728"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "deb4f8f5ee11db2d5706ac793129e95ffecb8b6e766423c6c74852fa2478caa2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0941c64d210e6c6e0a775e446aed517f69a6a28f84ae1ba53f5d71bb17c83b88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0173ef65f3865b4ff8babd2dbdbc82cfaa60f27e5c655c87e3290846362a9d74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b58176de1d90f836f0823c5ded5c0f4b850119ee828e9b96f0e5d9b2d46ad553"
+    sha256 cellar: :any_skip_relocation, ventura:       "d1f27fcfd45ffcd9b382ded13e62088e3e26a31b25461e967085522e4d8f7eff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4467d01e9a685274ae894f05199c7e4cc63957e6d102e0a4ff1317f61f2b46b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1728f2acacd355e6d11300f0089d21c4989e7ce21deadd8c9290cc64dc81fd89"
   end
 
   depends_on "rust" => :build

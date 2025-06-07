@@ -12,18 +12,19 @@ class MongoCxxDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c93c0b4cb94f4e319bcaa7d684ef898443a0b0b02512f00d860637f334bf376"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e091b2c5bfa0ed21a67b8c2fda02864183329b83afced303367cd90e2fc2424"
-    sha256 cellar: :any,                 arm64_ventura: "24ff232dff402332fdb24ba5ed406f93422ae56613d89e6e34961e1cc8ce45e8"
-    sha256 cellar: :any,                 sonoma:        "4786e509bbebf0e1bb24802426d0027463126bfe495958cf0412d70a37aca9b2"
-    sha256 cellar: :any,                 ventura:       "acd7dfee17966b718af51c503237001f3ffdd8d1965ae18a6e864a1289e8f662"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5ae666c8d2a548c041618ab1ccbaf2192f34b49b04855e6cc1161fd4d36e120"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0a8a48e56b662d49b9ccbb710d7c31ca71860a3a7f716ed8493397e2225d303"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a5ffe092afce00444e05ee5cdfb8001117477f591d56c903433d29d5ad83cb3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "826490125872b68bee63c2d174cee531d80f6df3a4b8c827890247e0e417cfbf"
+    sha256 cellar: :any,                 arm64_ventura: "5b05a991ab83a52e323abfbe07e2f0f04409f94099dff5f6ce4ec469183a3455"
+    sha256 cellar: :any,                 sonoma:        "d681ae294c7218b31f9ef1a163a668ecffb3a3718dae7fe0a717adc1861a6219"
+    sha256 cellar: :any,                 ventura:       "bba38b659f6c7cd906ffb7fafdf938552315cffd4237b7d9ffccb37194cb1551"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28b2bf9f290e93e18229b958daef29aaa60261c7e3523eb8f1a129ebbc1a0b11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b9e24205688ef528e54cfe31979b92198225fa8d994c35090d0990b72d7cb7"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :test
-  depends_on "mongo-c-driver"
+  depends_on "mongo-c-driver@1"
 
   def install
     # We want to avoid shims referencing in examples,
@@ -31,7 +32,7 @@ class MongoCxxDriver < Formula
     pkgshare.install "examples"
     (buildpath / "examples/CMakeLists.txt").write ""
 
-    mongo_c_prefix = Formula["mongo-c-driver"].opt_prefix
+    mongo_c_prefix = Formula["mongo-c-driver@1"].opt_prefix
     args = %W[
       -DBUILD_VERSION=#{version}
       -DLIBBSON_DIR=#{mongo_c_prefix}
