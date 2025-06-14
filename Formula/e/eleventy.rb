@@ -1,19 +1,13 @@
 class Eleventy < Formula
   desc "Simpler static site generator"
   homepage "https://www.11ty.dev"
-  url "https://registry.npmjs.org/@11ty/eleventy/-/eleventy-3.0.0.tgz"
-  sha256 "821cd03bbaecf7dd657db6d20e3373e62fc30d78c44828b1334672294f924ec1"
+  url "https://registry.npmjs.org/@11ty/eleventy/-/eleventy-3.1.1.tgz"
+  sha256 "eff794b0b2d435532af76a75a2049914923e9ab183c517b4061a1cb9d26bf195"
   license "MIT"
-  head "https://github.com/11ty/eleventy.git", branch: "master"
+  head "https://github.com/11ty/eleventy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b66c70dea8df5e3fac4f1801024d57dc533df2d12bdf016983527f12c18700a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "b66c70dea8df5e3fac4f1801024d57dc533df2d12bdf016983527f12c18700a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c027b2de87504c8e55ed9bbe9d230c9866076f93654f64e21c935f762aa8485"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "402360f36070efe864dfb0667e28d74500204bbf9bb355f119d0b4fe53b6585e"
+    sha256 cellar: :any_skip_relocation, all: "5ad4a19fb02401364c5066a30b5dd4fe0e3c01c0947fd8ddb39477d49f0593b9"
   end
 
   depends_on "node"

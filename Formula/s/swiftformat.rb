@@ -1,19 +1,19 @@
 class Swiftformat < Formula
   desc "Formatting tool for reformatting Swift code"
   homepage "https://github.com/nicklockwood/SwiftFormat"
-  url "https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.56.0.tar.gz"
-  sha256 "88e08fb85fd72f50061c7a6278517b43029a98bdf39d2d4c635a01ee9b435276"
+  url "https://github.com/nicklockwood/SwiftFormat/archive/refs/tags/0.56.3.tar.gz"
+  sha256 "61574580b4f26dff64095a5bf415ca171299c3c0a3e6dc536d19910800e2c3c2"
   license "MIT"
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c8299cb42c7453cd9d5dee8e82a20d02b36bc076c57ec8c168d1ca497849de7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5aab3754ce7a40acd485ba02a7bb9633e4e80fc0ec621dc2c78cfc2f2087f688"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "34cc58ee6dd254e5b6239cb9c09215c964bb53bb54f6ac419c40e9a8bfe2fadb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a2592548bed75356c26032cc3d71f63c6ae5c5cfb4bd0c410118a0c270c59fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd9b92c9eff14264681b7e20a3855fe9f93af2bcda02f1555c9315bf095dfcb1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6933b0f1bda88ef4bc694f1ddb399772ce127023fd78df3ed9af7fd3bb201c62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cacb8521b982b5fec4117f19264fbdffc9abf7077479179f7315a40deadda3d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2badab533cc65b793c00ae6e007f5563b7ea97c4fddfb2e64801e5b8011c74d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9c1eaafc8665d679caeaf58d1fe8477eb9848dd98f4a62ea48e530a783cabd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e1adf645cf2dbabadbe3b7f1fe65ba6c05af888b00e7dd962cbb66610199ef4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a53a01fc8a9d6ecdfd7d43a7dd2288f778b52df21b4aa0bb50e7bce34488e44d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ad42ddf1d84771aed936425f3ff4aec49e195857cb05315e87a1b0f53ff1269"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08fddf82fdd0b191e440390c6ba8bb984bac86646505d391d6236ffa9ca93646"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6457ea86657e8146f5fae4dc852d36ab18e52c481cc50c89642f3200a2479a0c"
   end
 
   depends_on xcode: ["10.1", :build]
