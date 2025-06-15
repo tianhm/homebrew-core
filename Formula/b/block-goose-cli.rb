@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://github.com/block/goose/archive/refs/tags/v1.0.23.tar.gz"
-  sha256 "cc5d5d52a78ea794b5bb992786fb13fdd8dfe3e14e3747c952c095bcea1dec4e"
+  url "https://github.com/block/goose/archive/refs/tags/v1.0.28.tar.gz"
+  sha256 "780ec1f805038b3c5549b4c04c55770a5bb25d7a252ef00c61ee26bb873e89a9"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -12,16 +12,17 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93d1f69b039c28409c0e20a81ccf4a8d1a01383feff8dc5bfae45c4f323aa7f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b72a5b72b8f70a80894d7c5c36be297682daae44f973915bf21467d3ff69c07a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "161f5da57c3065262da9eb28ccfb13dd12dce1dbbcc7c25f5eb4cf97adf99d08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e0cf2bdc311fc37aadc3df6053b35d344d15af10ce04b3e87cbb0b7217d4711"
-    sha256 cellar: :any_skip_relocation, ventura:       "77af89ed5aeb3c6ba964b63b3f9e26617ba599a1f6fc89fd546e1f1a24b00360"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a233a3729a77223651d57e740676df2dc5c9ae6eea227bc0ea76892564e91da1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c628c1a6b9682b35a226ebb0ec90daf825ae1ad208bbf1e2abebf12fbdf1e64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1899c4c918e1d37d045fcbeab1283644e894c66e180e852d62af71c766191fbe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c4c7cfb8f0e1d680e2d25400e05fded24aa4cebc508d18cf51442aaa50f3347"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1a54658733c81cdcd30ebacb7c4d0d13cf7482306c865d8bc5d522dfb9bc9a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a5950b0f94b009f0f502390d3a0b30a3f1c4135f441b10144ff5d9bfa0a47ca"
+    sha256 cellar: :any_skip_relocation, ventura:       "911e8d36242ae15d3a3551833904608d2c11224e4004ead19a4473d2a17a9623"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a81db9d8b444cfd004d1a506bb5e66e23da126e6ccdb8da99fd87091cedc161"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8c5e0d8db65353d9df7239b9dd78d5fdb2c87f07207936b680113fbda1dd2f1"
   end
 
   depends_on "pkgconf" => :build
+  depends_on "protobuf" => :build # for lance-encoding
   depends_on "rust" => :build
 
   uses_from_macos "zlib"

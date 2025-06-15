@@ -1,10 +1,10 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
-  homepage "https://github.com/trycua/computer"
-  url "https://github.com/trycua/computer/archive/refs/tags/lume-v0.2.13.tar.gz"
-  sha256 "985539e86707a4ab60b19445b69d5ae43d9f725b6f582137c07e069f33264505"
+  homepage "https://github.com/trycua/cua"
+  url "https://github.com/trycua/cua/archive/refs/tags/lume-v0.2.15.tar.gz"
+  sha256 "13e33eeaa7cc459975a2045cc7c81128ea030988f8c493d2e903967fefd98d8c"
   license "MIT"
-  head "https://github.com/trycua/computer.git", branch: "main"
+  head "https://github.com/trycua/cua.git", branch: "main"
 
   livecheck do
     url :stable
@@ -12,8 +12,9 @@ class Lume < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "994528c13cbc981ca743fd7325e0bb25393ee21a8889f34500733549b581e5ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba67e904fd2e56753a6379ba81e4e69df71e5428b49f1dfff6ecf3dbbf5d6a84"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77bb23d3c58147d030d07d5548d81c3d54e79d5b39158daf5bb74098e26e78ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84bb13d84c4fd64cb8c818158f9ebbb955c2b6b196c7b2bb887c9bc4994ffda6"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -30,15 +31,27 @@ class Lume < Formula
     end
   end
 
+  service do
+    run [opt_bin/"lume", "serve"]
+    keep_alive true
+    working_dir var
+    log_path var/"log/lume.log"
+    error_log_path var/"log/lume.log"
+  end
+
   test do
     # Test ipsw command
     assert_match "Found latest IPSW URL", shell_output("#{bin}/lume ipsw")
 
     # Test management HTTP server
-    # Serves 404 Not found if no machines created
     port = free_port
-    fork { exec bin/"lume", "serve", "--port", port.to_s }
+    pid = spawn bin/"lume", "serve", "--port", port.to_s
     sleep 5
-    assert_match %r{^HTTP/\d(.\d)? (200|404)}, shell_output("curl -si localhost:#{port}/lume").lines.first
+    begin
+      # Serves 404 Not found if no machines created
+      assert_match %r{^HTTP/\d(.\d)? (200|404)}, shell_output("curl -si localhost:#{port}/lume").lines.first
+    ensure
+      Process.kill "SIGTERM", pid
+    end
   end
 end
