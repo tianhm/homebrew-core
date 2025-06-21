@@ -1,18 +1,18 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https://docs.sentry.io/platforms/native/"
-  url "https://github.com/getsentry/sentry-native/archive/refs/tags/0.8.4.tar.gz"
-  sha256 "9dd82daea1c51c2316c49e9e4737ab4c32a79470f5567b93115bb3a0fde4b93f"
+  url "https://github.com/getsentry/sentry-native/archive/refs/tags/0.9.0.tar.gz"
+  sha256 "657391465eb6236d6e3f3eec1d25434178783328f1f0a744c99c9b049c6225e1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "660abb347ab20a340bcadf24c0fa824da82e31736a6f8acf8794246b9ccdb4a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "789d7be4e53003553ae97314e5aa6b089b4942c666c7887071f11de2737e87d4"
-    sha256 cellar: :any,                 arm64_ventura: "4882f061d1617784f6d79f0427134d8c24cd753b10939d7bbb8050d3c1fec0ea"
-    sha256 cellar: :any,                 sonoma:        "9f9578a0e89df2aff0e0bc464cbdc94e214c754c80698c9f6672e6ca1e5cce23"
-    sha256 cellar: :any,                 ventura:       "321779ce15d4023a5a02f6f0cfad4770ae3780eb9e81555867eb1550fbd4f990"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43e174d2d052d20953bc29c177f60fceba3c83c9569a8ba95afe96b973e3edd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fb98a486f1f22731d5144f1cca2c83e36b7eedd7d6ce7b4036e92369e2b877c"
+    sha256 cellar: :any,                 arm64_sequoia: "92f60f762b599c4464e88f4a5f1dfcbb5bcded76c83efda30068f2025b49aa30"
+    sha256 cellar: :any,                 arm64_sonoma:  "73d63538e190b5bd973b2c55a906cac7aaca39ad0715e42fccc63a959d479688"
+    sha256 cellar: :any,                 arm64_ventura: "93beb1ab0d866de14bdecf292117266181446fd8e262b244f5f7e1cce56fac40"
+    sha256 cellar: :any,                 sonoma:        "3ed21be467d60d1aef72aca11ece1fcf9ace6730a24c7ab8e1342c58fb72e9db"
+    sha256 cellar: :any,                 ventura:       "2d2682f719c05bf360d1f151759fb0df4a19aa3669b40c311b770242cbafe901"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1accca2d383866a4b2b8d8b995a0aa1d442a55a3749200cec577ab9d2b56aa4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "132053f6c75c555413460b4416babf0e88050f27270b95f1f70c58a9e11743b9"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +28,7 @@ class SentryNative < Formula
   # No recent tagged releases, use the latest commit
   resource "crashpad" do
     url "https://github.com/getsentry/crashpad.git",
-        revision: "2d97a484bb628b05a46203e4a05c6c827796e5cd"
+        revision: "b2653919b42cf310482a9e33620cf82e952b5d2d"
   end
 
   # No recent tagged releases, use the latest commit
