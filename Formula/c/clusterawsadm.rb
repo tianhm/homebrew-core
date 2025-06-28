@@ -2,8 +2,8 @@ class Clusterawsadm < Formula
   desc "Home for bootstrapping, AMI, EKS, and other helpers in Cluster API Provider AWS"
   homepage "https://cluster-api-aws.sigs.k8s.io/clusterawsadm/clusterawsadm.html"
   url "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
-      tag:      "v2.8.2",
-      revision: "79ae3d046454586dc5ababd1f45c9791fdb5bbc8"
+      tag:      "v2.8.4",
+      revision: "49658babd14cb9590f9fef8330243d530f7d6602"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Clusterawsadm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "522691a47f0259553b8efbe3e4d9eaed15b3b494d11891b1bc146b5e94317e66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c7ded21106ff04a7acccb9bdfa5116c3baf79b157eb0010f0d847d3b9c118fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d72d4a2b48214e15e9fb7129af75dcdcec1a237d91c6dbbde6151ba12a027c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b51bf4f7a8bb7154ae0ac8ed24b554c8d1bd684a0bfe386201807dd56767d6ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "b4ee0e75527edf221443ebfb53a500d538ecae60d4b06959339657963ef44893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da73b7cf561faedfb17ec642a0adde6ab5dddedf4e289bfa663069e7875be537"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "000bd6559e318952155c155d05548dba25f9ebafd15430b7a18c9a1456e6e683"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba21fff18a7d5e1560dfa16bc3a9e1656cffc2a43bef0df7c06c87af95c665b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b2391eb924d5c000c71d672c4acb98ebe509d8de968eae01bcd1d032ff13e33"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16d6de766e18a14f4503f894304c37433d796ce9cdf4e2fcb92ed51cac1d7dda"
+    sha256 cellar: :any_skip_relocation, ventura:       "07fb08edbfec7f8165ae1e53db1f47aa3c1e02a2a92942f64a0afc76ea5eb075"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea4f80b7a6751f98abcf6d57fd2b3089980fe1e3b6d138fec1cd95adba46975c"
   end
 
   depends_on "go" => :build

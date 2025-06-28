@@ -1,18 +1,18 @@
 class Gum < Formula
   desc "Tool for glamorous shell scripts"
   homepage "https://github.com/charmbracelet/gum"
-  url "https://github.com/charmbracelet/gum/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "cedcb16ee99149236dd1b0aa786a76fa49ae37da87d0a9a065d4db16a05a5496"
+  url "https://github.com/charmbracelet/gum/archive/refs/tags/v0.16.2.tar.gz"
+  sha256 "a8f53901447b13613e3445538e2c4d42fd7afb9dad9535debff1b64656b66867"
   license "MIT"
   head "https://github.com/charmbracelet/gum.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0777a7b361f46a1445a66b4fef79ab48ef25b95003123f623e7101245e0c3904"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0777a7b361f46a1445a66b4fef79ab48ef25b95003123f623e7101245e0c3904"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0777a7b361f46a1445a66b4fef79ab48ef25b95003123f623e7101245e0c3904"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f271722cf9f927416a1d3b7eb43d84f49f0ae33c422e00f83e4b42a0c55b6d74"
-    sha256 cellar: :any_skip_relocation, ventura:       "f271722cf9f927416a1d3b7eb43d84f49f0ae33c422e00f83e4b42a0c55b6d74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e0808d8dffcc35da6bf9397fc67451c0cfd8ab0ec39e0118227dcb50fe19f50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c62d6a70c600cfe99b692f3c2d642e87b1c0cb6a5284f51e8a44ce586ecc53b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c62d6a70c600cfe99b692f3c2d642e87b1c0cb6a5284f51e8a44ce586ecc53b7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c62d6a70c600cfe99b692f3c2d642e87b1c0cb6a5284f51e8a44ce586ecc53b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d4bbf103641e5a4e705156fb4cac645ab02056ba1988fdfcdff56629b69e8c2b"
+    sha256 cellar: :any_skip_relocation, ventura:       "d4bbf103641e5a4e705156fb4cac645ab02056ba1988fdfcdff56629b69e8c2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3753b658cda311926c76e45d2c4f1677f0aa371f99b13f5f320758866be72e8e"
   end
 
   depends_on "go" => :build

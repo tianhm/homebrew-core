@@ -3,12 +3,12 @@ class GitMachete < Formula
 
   desc "Git repository organizer & rebase workflow automation tool"
   homepage "https://github.com/VirtusLab/git-machete"
-  url "https://files.pythonhosted.org/packages/43/57/b5adc580fe87496a285a1f5a80a190c1b10cdf1224a5f49511638bbb86d8/git_machete-3.34.1.tar.gz"
-  sha256 "c1ee92a06fd3f1139326dfb45abfc0813ca64f354bd001ff4117968b0af0d450"
+  url "https://files.pythonhosted.org/packages/0d/54/f491974bde343bc7ce2de8736f69fc5439fed31a72a0904c713e503a712d/git_machete-3.36.0.tar.gz"
+  sha256 "7e77863dc0cdf2d95c5059798a33c70426bda0588af99fad2ebe912d9058979d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "927787a2bba17874fb8e41108395f17a620370c99dfab14ced5815c847b1416f"
+    sha256 cellar: :any_skip_relocation, all: "d32b84bc28c4536fe545ac2881d74ee8b3a96defe2bd0ec006d2b03d6446aa29"
   end
 
   depends_on "python@3.13"

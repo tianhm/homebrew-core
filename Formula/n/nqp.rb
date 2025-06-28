@@ -1,8 +1,8 @@
 class Nqp < Formula
   desc "Lightweight Raku-like environment for virtual machines"
   homepage "https://github.com/Raku/nqp"
-  url "https://github.com/Raku/nqp/releases/download/2025.04/nqp-2025.04.tar.gz"
-  sha256 "6468566fd63a75b743979df433beab99690125c4d90972c3b371f6ace82528a0"
+  url "https://github.com/Raku/nqp/releases/download/2025.06/nqp-2025.06.tar.gz"
+  sha256 "cfb396d6d0114d00f0dc2de4cf5f424fa72968e53c9c7cb75690bcdfd45bfcc5"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Nqp < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e2463fc727bac12ca2dd08224c9b0da9e43ca68bf6b5c802da3dd1faac6ec2ed"
-    sha256 arm64_sonoma:  "c3d32229c07c0bc65db3d4eaede67e497dda45b024de66e6848be3268c045581"
-    sha256 arm64_ventura: "ae32fdad142b625ffb29a5d41f164f9a1f49382cc880ee2ae8e1716eb6d490a3"
-    sha256 sonoma:        "636e461d6dff50ed188a840cd6b8df5debb7ae854bdbf804108cb4ea4f4fbddc"
-    sha256 ventura:       "739bef0247c89a509b05876e87a2319f4d378c0ed749ee7a2ba2e742f7846eac"
-    sha256 arm64_linux:   "68f61319361ee737557599af2546a18c10a4135c8e1553d3e92fd693739624f9"
-    sha256 x86_64_linux:  "0dec3fcf774a1b16d4588bebeb55b646fbacdd28639e616eb591f386deb58328"
+    sha256 arm64_sequoia: "314cda261f3731d39b2dbd3b2c3a8c3fd20174ec08c3df1f2fbba50bfc29e10c"
+    sha256 arm64_sonoma:  "169056e41d207dc7a654c05f00f3b1d660405fa3478aa9e1a9b0fa5186ad5339"
+    sha256 arm64_ventura: "edc3a0cfeb895b4788039aa4b13490ca848c85e38a6d6c4bd2a22bd8dbf1c6b7"
+    sha256 sonoma:        "7dbef48daaee380f83a82c33b5df9b48aeca9b5d3d114dafc8a13619063e4e04"
+    sha256 ventura:       "e59ff2f9cfdabcdfff4b7a1d938a6b01a20b6eb41b743ee5d14008a64e8ebcb2"
+    sha256 arm64_linux:   "8d90f9b065b53f99470b196bc321e3d3df76ab0e6bbf3b893fe2a83c29535a54"
+    sha256 x86_64_linux:  "0076a6be82ff837cf5d21177c8a68d406b565ede8352e71033c27f9750e596eb"
   end
 
   depends_on "moarvm"

@@ -1,18 +1,18 @@
 class Rtorrent < Formula
   desc "Ncurses BitTorrent client based on libtorrent-rakshasa"
   homepage "https://github.com/rakshasa/rtorrent"
-  url "https://github.com/rakshasa/rtorrent/releases/download/v0.15.3/rtorrent-0.15.3.tar.gz"
-  sha256 "6dfd42c19e6ff2f5ee8b99855314cef4f10bd669663c2670cc85fd6a4e2c4e40"
+  url "https://github.com/rakshasa/rtorrent/releases/download/v0.15.5/rtorrent-0.15.5.tar.gz"
+  sha256 "847a3fdb69188c621950a3a74eaf8dbc464118659c9638d10c7cf5df57508b17"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7abb3f0ac2b614f55c1f55cf4f624137b6532c45e900fa534da392fadac5846f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d2c15dd128af1b7403126bbeaf63d0628f579a8eddee6688b51a91b18e4a5b9"
-    sha256 cellar: :any,                 arm64_ventura: "e7d9c5a9ba6291a6043aba2a146f37a361afc3382e6a65a8948ee2fa366ae1f3"
-    sha256 cellar: :any,                 sonoma:        "791e577e539051b785bf7fcd8f02acf6ebaabceec911227204abf027a7ce9620"
-    sha256 cellar: :any,                 ventura:       "789d7e46ad1019063b7bd7ba94011bc4c56e17ae8fb15c0dc862765dec2bc955"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "af91d9a66c6d6fcdcbfa44d6489ecd98a2342a7756bdfa8e7334c33e6ede2a6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acfc175eccfc821a19f64f05a13d92f31311dbb35691f490af727178ad8f0461"
+    sha256 cellar: :any,                 arm64_sequoia: "2fbedafd9b8ea6967606c71ecd7d3287ffc538377f0a961d487b27bfa8a4e8cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a11c7ffe9cb63552cc4fbb28daa7791d60e30fe80366294dee8738c5c25afae6"
+    sha256 cellar: :any,                 arm64_ventura: "e1737b4bf3ef0889e2d966da6e1e75be865b919b683a5c56ce4d02ac9bc5a986"
+    sha256 cellar: :any,                 sonoma:        "6d171127df1bea0a391b3a4a586eca3bee4ffe8e42f82a7ec88e565090012dba"
+    sha256 cellar: :any,                 ventura:       "5679b89a2f0923d8b356d9fafa59ad2e761e0ee2044bcf0a3615fdd3033ec008"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1be0dbd4486293935fb0f15418354c347ba5c98ebbf5ee0db6075f27a362ecfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b94d041e74fc24ef09ed45480578b75824c0572672dad8d081f0f767a9fac124"
   end
 
   depends_on "autoconf" => :build

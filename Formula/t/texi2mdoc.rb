@@ -4,11 +4,14 @@ class Texi2mdoc < Formula
   url "https://mandoc.bsd.lv/texi2mdoc/snapshots/texi2mdoc-0.1.2.tgz"
   sha256 "7a45fd87c27cc8970a18db9ddddb2f09f18b8dd5152bf0ca377c3a5e7d304bfe"
   license "ISC"
+  head "anoncvs@mandoc.bsd.lv:/cvs", using: :cvs
 
   livecheck do
     url "https://mandoc.bsd.lv/texi2mdoc/snapshots/"
     regex(/href=.*?texi2mdoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9a769b9b0c164d2f296ef48c04dfa683a0605dbf55e93f12c34c273b9ca6f90c"

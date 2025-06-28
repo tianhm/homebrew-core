@@ -1,19 +1,20 @@
 class CargoShuttle < Formula
   desc "Build & ship backends without writing any infrastructure files"
   homepage "https://shuttle.dev"
-  url "https://github.com/shuttle-hq/shuttle/archive/refs/tags/v0.54.0.tar.gz"
-  sha256 "469e08c0a168cf26347a9ca5fa746154a4887ae748e1809ba54fd342f64cfa82"
+  url "https://github.com/shuttle-hq/shuttle/archive/refs/tags/v0.55.0.tar.gz"
+  sha256 "63b49f09d7bf9264ea72276ac6d785f7a7c1d4722734f24c4fcc9ea77fdda59e"
   license "Apache-2.0"
   head "https://github.com/shuttle-hq/shuttle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1d8a79e772cadc92aa068942893197405b905080894351408be9e919dbb5f58e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fee93017ecccbce60465e5535dbd4ec255a62c1a63077ce124135ef0b1a63013"
-    sha256 cellar: :any,                 arm64_ventura: "3de03d91bf65d8681ab1c4944431104ac39e56575dc14ec97ad1cb9f74c8cccf"
-    sha256 cellar: :any,                 sonoma:        "2525c6c0cfe6ffd5c17358db32337b297064988aefcff5ad5293c422ea4fcc90"
-    sha256 cellar: :any,                 ventura:       "ede971d32cee736d3c7e8e2d8bf1f9f1201efce2dff909901d681751c342d846"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "44f0cab56ac4f063240b24a72cb381b263a70df203f5926175614caa615d7771"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa7bae036f97a2c3b7ee866c9965aa0a283857538f0376d4cdc8251450ac2536"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d93f14aed3cdf581a01b4f0f979573e72268ce1cfc9c343bbf7f2ec8f091ebc1"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c940c83b037e820192022a602e9fd69ffc70e2c96883991069a6ccfc2ca2852"
+    sha256 cellar: :any,                 arm64_ventura: "c9718b976b49883d7ce15a15c45cb6a2b6c290d06859e032d7dd9556c128808b"
+    sha256 cellar: :any,                 sonoma:        "f7d74083e990b5236b937feb0ae18c6e60b94ce1f46f67f756849f3830f641e0"
+    sha256 cellar: :any,                 ventura:       "9feb45fde93a91de2cbc56c7bd324bbe90e0015b1dad3c9404630c4d1edb5526"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "024ef07e6f498a0404df8a15b4f7d8bbd161312303adedaa838268f319b8c75b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95311901cbdc1d7b7012af7d1ea210268e295512c9e57816c59c6607f34af2af"
   end
 
   depends_on "pkgconf" => :build
@@ -22,7 +23,7 @@ class CargoShuttle < Formula
 
   uses_from_macos "bzip2"
 
-  conflicts_with "shuttle", because: "both install `shuttle` binaries"
+  conflicts_with "shuttle-cli", because: "both install `shuttle` binaries"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

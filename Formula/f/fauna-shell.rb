@@ -4,7 +4,6 @@ class FaunaShell < Formula
   url "https://registry.npmjs.org/fauna-shell/-/fauna-shell-4.0.0.tgz"
   sha256 "6dd5c853c1a62e72d6101741a498b3b9fe4db21e68ec2e024541b488b858c77f"
   license "MPL-2.0"
-  head "https://github.com/fauna/fauna-shell.git", branch: "main"
 
   bottle do
     sha256                               arm64_sequoia: "3a775fa6fad091d1c382d58c49d484e416261ce2073c36ed6271364a34fc4821"
@@ -15,6 +14,9 @@ class FaunaShell < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:   "efe0fab8f5576b66ad2b6ced19f7c5e545a8d5c1a8d34c36e917facbf18ef240"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a682cf65cd7e19afb1a0c8af45d3d76325376311433592478c2412e091ba7cfd"
   end
+
+  # Fauna Service Winding Down, https://news.ycombinator.com/item?id=43414742
+  deprecate! date: "2025-06-22", because: :unmaintained
 
   depends_on "node"
 

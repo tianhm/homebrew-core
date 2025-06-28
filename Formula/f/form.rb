@@ -1,7 +1,7 @@
 class Form < Formula
   desc "Symbolic manipulation system"
   homepage "https://www.nikhef.nl/~form/"
-  url "https://github.com/vermaseren/form/releases/download/v4.3.1/form-4.3.1.tar.gz"
+  url "https://github.com/form-dev/form/releases/download/v4.3.1/form-4.3.1.tar.gz"
   sha256 "f1f512dc34fe9bbd6b19f2dfef05fcb9912dfb43c8368a75b796ec472ee8bbce"
   license "GPL-3.0-or-later"
 
@@ -9,6 +9,8 @@ class Form < Formula
     url :stable
     strategy :github_latest
   end
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "891f2e2731329a342dcbda8da08939d5ef910a1bedfaab2be34da51c1f6fe72d"

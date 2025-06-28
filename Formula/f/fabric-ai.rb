@@ -1,18 +1,18 @@
 class FabricAi < Formula
   desc "Open-source framework for augmenting humans using AI"
   homepage "https://danielmiessler.com/p/fabric-origin-story"
-  url "https://github.com/danielmiessler/fabric/archive/refs/tags/v1.4.187.tar.gz"
-  sha256 "8fd72bce8929735586f475037c9517dea058efb08d371976805b88d3f90a62cd"
+  url "https://github.com/danielmiessler/fabric/archive/refs/tags/v1.4.221.tar.gz"
+  sha256 "3e6fcda42b4eba0a8b5ae8d08426ea46905375bbf23266edf5035f475956d6b5"
   license "MIT"
   head "https://github.com/danielmiessler/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a23e09110127e9fc4fd37d8e6652ede363b8e8c5decbe72fc9648bccba6a1eef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a23e09110127e9fc4fd37d8e6652ede363b8e8c5decbe72fc9648bccba6a1eef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a23e09110127e9fc4fd37d8e6652ede363b8e8c5decbe72fc9648bccba6a1eef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d50764b2ab10315e410f2781943021e507f48a6f4673f7bf8351106791ba2d43"
-    sha256 cellar: :any_skip_relocation, ventura:       "d50764b2ab10315e410f2781943021e507f48a6f4673f7bf8351106791ba2d43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee351914d9ab336f52757f5d9afacd051c4c06f7d8b840b9b0d43f5c395bd915"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e56b27c5bacf0e0f4ce60182aa437c44463d6960f1275a1e2cb889fa03a0166"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e56b27c5bacf0e0f4ce60182aa437c44463d6960f1275a1e2cb889fa03a0166"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e56b27c5bacf0e0f4ce60182aa437c44463d6960f1275a1e2cb889fa03a0166"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fb21d838fd00fe8828c08532e9019ba783e94b4238915c00c18accb9d84b3bf"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fb21d838fd00fe8828c08532e9019ba783e94b4238915c00c18accb9d84b3bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cd1b74fb952d29aa0b0000129ecbdb7f78929b3ff2461029778006ad8eaa398"
   end
 
   depends_on "go" => :build

@@ -1,24 +1,21 @@
 class Fx < Formula
   desc "Terminal JSON viewer"
   homepage "https://fx.wtf"
-  url "https://github.com/antonmedv/fx/archive/refs/tags/35.0.0.tar.gz"
-  sha256 "5ab642bb91ad9c1948de1add2d62acec22d82398e420957c191c1549999eb351"
+  url "https://github.com/antonmedv/fx/archive/refs/tags/37.0.0.tar.gz"
+  sha256 "75c8c360bac4bccbab85b4873b7030a4ed88d8d4a6e718a935851be6454fe56b"
   license "MIT"
   head "https://github.com/antonmedv/fx.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8222f75e23b7eb70afe08accc15e5e47edb4fb2a7f292783c3e519860334ea6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8222f75e23b7eb70afe08accc15e5e47edb4fb2a7f292783c3e519860334ea6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8222f75e23b7eb70afe08accc15e5e47edb4fb2a7f292783c3e519860334ea6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9415000df5544c72bd65cc45416747ab76b065ea72619f9e8e5de6bf9e189cc3"
-    sha256 cellar: :any_skip_relocation, ventura:       "9415000df5544c72bd65cc45416747ab76b065ea72619f9e8e5de6bf9e189cc3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b9cbf3db820e33f2f832e836a193d4e5af804a53fb84961e97ebfa05562623f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3499b53ebeaf36e154444504aaa4659576c5248921fb1b3ac1e6212de1aa48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "46d824809e86a85bbb1276c09c162ed9ea3dec022dea146dce112563c897408b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a39294563af592665ea4ec02bce395466d501084d671444286e0dfda6afa2bd0"
+    sha256 cellar: :any_skip_relocation, ventura:       "a39294563af592665ea4ec02bce395466d501084d671444286e0dfda6afa2bd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4477b6f9e8efc10e29412c8eea8afebd422c6b8f0ba83977fe4650ec7a2f8d32"
   end
 
   depends_on "go" => :build
-  depends_on "node"
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

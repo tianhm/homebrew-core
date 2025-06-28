@@ -3,10 +3,9 @@ class Mapnik < Formula
   homepage "https://mapnik.org/"
   # needs submodules
   url "https://github.com/mapnik/mapnik.git",
-      tag:      "v4.0.7",
-      revision: "d9d4288bea04c5ef9925c03db353cf5f308e06ad"
+      tag:      "v4.1.1",
+      revision: "bb6aaa0cdd9f54cd08426e9c0fe051bc7a25072c"
   license "LGPL-2.1-or-later"
-  revision 2
   head "https://github.com/mapnik/mapnik.git", branch: "master"
 
   livecheck do
@@ -15,13 +14,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "29a822426649d23d451319bd0e8a97ca73befc6b26b2643cabd9ed6aea578e8a"
-    sha256 cellar: :any, arm64_sonoma:  "a078278f51be82e77b0392328a77750f8b3d10aa506ba953a3182a90b7a06d0a"
-    sha256 cellar: :any, arm64_ventura: "2aa1748de65ed49fcbdc2f2483e1933e9238d5d08f23f0e199334de7e10efee1"
-    sha256 cellar: :any, sonoma:        "44dd1ff51b0290cda60df185e662717209a8b7d0eadd05da7d6df429d521fddb"
-    sha256 cellar: :any, ventura:       "83221debd01d9073623d4b84cfce8d28dd76ee9199333130eabc2c0685d640a9"
-    sha256               arm64_linux:   "d4fb224d070a7cd94e3c17674e16c39a9c7d07293bdb5c7115f75a3b1a82fa57"
-    sha256               x86_64_linux:  "344607e36fe3ed140f6eda570637cf093c1abbca17dfa541efa01a15e04672fa"
+    sha256 cellar: :any, arm64_sequoia: "a8a18dcd2aff757d8039104c1eeeff563c50b75beba3d0cdefd0d42cb495509c"
+    sha256 cellar: :any, arm64_sonoma:  "35a80d8fb5c9598e754761f6179fee5a29587a58636c718f4f49c618cdb0d422"
+    sha256 cellar: :any, arm64_ventura: "bbc76eab5faedaad2b735995fc68b889c569065042428966e7cb2c4adeb79118"
+    sha256 cellar: :any, sonoma:        "01cae45f2d7dea3a35bda47e178b411f8143f8263ebf15ab7ce37f1ce5d48400"
+    sha256 cellar: :any, ventura:       "ebd5c3b128627cdddc145760edb09956520e8ec631629ed5da1683a4747277a2"
+    sha256               arm64_linux:   "36be1b0ffdbc17b846e953b52e56f8f48f55eed2deb934a61b1807f9d4d14a5c"
+    sha256               x86_64_linux:  "18d0ae221b4a8b08eadc0ec1c17186e662cfdd2f6afd81b5914299a3fc6a3c04"
   end
 
   depends_on "cmake" => :build

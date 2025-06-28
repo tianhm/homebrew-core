@@ -8,6 +8,8 @@ class GiDocgen < Formula
   license any_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0aa97f57971062c123e025311cee713886f9864cc8310fd53befe7bb77412ac0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "395b6e9efcb926d26d6840163dbabcbeb22e37d3d33b48015a78c8d2cb97865e"
@@ -21,9 +23,9 @@ class GiDocgen < Formula
   depends_on "python@3.13"
 
   # Source for latest version is not available on PyPI, so using GitHub tarball instead.
-  # Issue ref: https://github.com/leohemsted/smartypants.py/issues/8
+  # Issue ref: https://github.com/justinmayer/smartypants.py/issues/8
   resource "smartypants" do
-    url "https://github.com/leohemsted/smartypants.py/archive/refs/tags/v2.0.1.tar.gz"
+    url "https://github.com/justinmayer/smartypants.py/archive/refs/tags/v2.0.1.tar.gz"
     sha256 "b98191911ff3b4144ef8ad53e776a2d0ad24bd508a905c6ce523597c40022773"
   end
 

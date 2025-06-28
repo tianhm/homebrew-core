@@ -1,8 +1,8 @@
 class DockerCompletion < Formula
   desc "Bash, Zsh and Fish completion for Docker"
   homepage "https://www.docker.com/"
-  url "https://github.com/docker/cli/archive/refs/tags/v28.1.1.tar.gz"
-  sha256 "98b305725d453b6802a4df1e4c8184b66cf8d74e9050bbf3d92b2804621cb9f6"
+  url "https://github.com/docker/cli/archive/refs/tags/v28.3.0.tar.gz"
+  sha256 "0ac18927138cd2582e02277d365174a118b962f10084a6bef500a58de705e094"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git", branch: "master"
 
@@ -10,8 +10,10 @@ class DockerCompletion < Formula
     formula "docker"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "bec711e769cdf55d0f8ffa4e470d1e0e361a3eede07f23dc10833697030aae1b"
+    sha256 cellar: :any_skip_relocation, all: "a19b77d3e86b286ff37b22699eeea211e1d9004a6cc9ea582c76f956af8552cf"
   end
 
   conflicts_with cask: "docker"

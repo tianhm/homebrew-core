@@ -1,9 +1,11 @@
 class Mask < Formula
   desc "CLI task runner defined by a simple markdown file"
-  homepage "https://github.com/jakedeichert/mask/"
+  homepage "https://github.com/jacobdeichert/mask/"
   url "https://github.com/jacobdeichert/mask/archive/refs/tags/mask/0.11.6.tar.gz"
   sha256 "e76ae20a120c3ab44f1b14e73ff3f1b39d900bc66f8d2dab7fed4706bacd92fd"
   license "MIT"
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e768bea1c18237750a02152f2fa20f8bf243fde010b658312c760734d61d823"

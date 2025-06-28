@@ -3,19 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/f3/7a/2c2a781b3e227f528b19e1144efcfdd61f7414bf9cf84ba6bbdc215f3427/commitizen-4.7.0.tar.gz"
-  sha256 "ef95f2ef354b438dce7c6164e5d47d10cc377df666ee65a116bcfcb146bb0c0a"
+  url "https://files.pythonhosted.org/packages/ee/c0/fe5ba5555f2891bcb0b3e7dc1c57fcfd206ab7133a3094d70b81fd5a4a10/commitizen-4.8.3.tar.gz"
+  sha256 "303ebdc271217aadbb6a73a015612121291d180c8cdd05b5251c7923d4a14195"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a01f1d7e1c1d3555d6ca1c26baeca1798a8d6153f6db3bb1143356c68bea6e9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "1fb5367de4be0543281316fd3fbee6985110962cd4ff440e55bf9c4ed82608fe"
-    sha256 cellar: :any,                 arm64_ventura: "0d2f846b2df99148ae516d64c08f7e1e39dd3272e846fd4c57ce299af4a3e160"
-    sha256 cellar: :any,                 sonoma:        "7ac807312d20fcbb0176c832afa39672dc10293c7f70bcc96ab91c596f0907d1"
-    sha256 cellar: :any,                 ventura:       "9029e37e4a769024f872880ba5df3dfb9279a998de3d73a1d0f896ccbf2456de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0727d61643c2c45d834ccc841071e97725794975790e535f17b692cee4ac5678"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d27e59e3f28d1f08b7a58f632be6cbddc860bf4333e8522ba9113f4719848be"
+    sha256 cellar: :any,                 arm64_sequoia: "e449787045d47be22600b02a055f24b7f49629d22727f916cc2c749323929b1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "0681bfe68527065e241170669027b9c3b23540a8ebb19f0a49c6b9629d4ff12b"
+    sha256 cellar: :any,                 arm64_ventura: "6401a18be053a04216c9d53202604faa39b4179e249a25ceb06311ba696e69e0"
+    sha256 cellar: :any,                 sonoma:        "b0bcdc0edd47ebc73a5552f3a64b183b7a775aba4970ce68ff10747725b5db98"
+    sha256 cellar: :any,                 ventura:       "774eb98f84cf9967538d42c09e2dd08a80da06a2b72b4c68639cfae34046b32c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "306d82e4bfab03a8c3253e3f2c548af6a8fc52d5a416d1bcd4301193b7e04461"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edb34b7c88944da318be30db83618e059a69e785ceef9fc74bae29f922adc87c"
   end
 
   depends_on "libyaml"
@@ -37,8 +37,13 @@ class Commitizen < Formula
   end
 
   resource "decli" do
-    url "https://files.pythonhosted.org/packages/3d/a0/a4658f93ecb589f479037b164dc13c68d108b50bf6594e54c820749f97ac/decli-0.6.2.tar.gz"
-    sha256 "36f71eb55fd0093895efb4f416ec32b7f6e00147dda448e3365cf73ceab42d6f"
+    url "https://files.pythonhosted.org/packages/0c/59/d4ffff1dee2c8f6f2dd8f87010962e60f7b7847504d765c91ede5a466730/decli-0.6.3.tar.gz"
+    sha256 "87f9d39361adf7f16b9ca6e3b614badf7519da13092f2db3c80ca223c53c7656"
+  end
+
+  resource "importlib-metadata" do
+    url "https://files.pythonhosted.org/packages/76/66/650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0/importlib_metadata-8.7.0.tar.gz"
+    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
   end
 
   resource "jinja2" do
@@ -72,18 +77,23 @@ class Commitizen < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/37/72/88311445fd44c455c7d553e61f95412cf89054308a1aa2434ab835075fc5/termcolor-2.5.0.tar.gz"
-    sha256 "998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"
+    url "https://files.pythonhosted.org/packages/ca/6c/3d75c196ac07ac8749600b60b03f4f6094d54e132c4d94ebac6ee0e0add0/termcolor-3.1.0.tar.gz"
+    sha256 "6a6dd7fbee581909eeec6a756cff1d7f7c376063b14e4a298dc4980309e55970"
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/b1/09/a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fa/tomlkit-0.13.2.tar.gz"
-    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
+    url "https://files.pythonhosted.org/packages/cc/18/0bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575/tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
   end
 
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+  end
+
+  resource "zipp" do
+    url "https://files.pythonhosted.org/packages/e3/02/0f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180/zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install

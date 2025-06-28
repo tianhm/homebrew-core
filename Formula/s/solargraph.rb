@@ -3,18 +3,18 @@ class Solargraph < Formula
   homepage "https://solargraph.org"
   # Must be git, because solargraph.gemspec uses git ls-files
   url "https://github.com/castwide/solargraph.git",
-      tag:      "v0.54.2",
-      revision: "254f658a657dd8703cdd01663148dea14c2dabff"
+      tag:      "v0.55.4",
+      revision: "3259f2678ca3fb980f6b3a9cb009594dc98d3415"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3cca71b6d1ea27e92f5fa79eb05d6f21bd36ad8cf2b271d281e467e734a8a1ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "cec093409e5ae1e38933e65359969db77a2063f38b7e7fca5e9e954263815ef6"
-    sha256 cellar: :any,                 arm64_ventura: "0fe8a5beb7b45731459239fca1fbd7574d72c1abc5571e060671c7547617418b"
-    sha256 cellar: :any,                 sonoma:        "2c79f8d40a3993c2abd591eda730c59dba2a9a650933027144ce75dba764530c"
-    sha256 cellar: :any,                 ventura:       "c693000278be5acd0934127e53b5fa4ba8df6f68c9d428269c53302fcca5784e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9fb91ea6fb244c0313eb2b9d4f3303515182a044b44d2a138d514daaf76af8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f30993e8b37e669746f188c1df9c361b1b5e3d2575d4683d891042731e51b56f"
+    sha256 cellar: :any,                 arm64_sequoia: "30e2da31fb0c752d21ea95889c23d62013c4a912765dabd7c24d227ec6fd34f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d035d715bf1f8cf849c46978d45f29f1a7e797dcf7f440e268695921fd60ce1"
+    sha256 cellar: :any,                 arm64_ventura: "43f6d8c5d72d67313e2c24fc6162a33ee6c5c9f19987ce9a4d2d794e251d8fe1"
+    sha256 cellar: :any,                 sonoma:        "33ecfb72a4899a819ac088d3dd03eb565b81910555b20d50c1600241ad7fde5f"
+    sha256 cellar: :any,                 ventura:       "1452cddb802302356745a2e5d788c7dabe7f80d498c11dc971c0e84ed6f388f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e186a7f50f6c9becf6e8bc01c8d38d4812dbff59b2b40e10a64e0268ae04740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c190f85b818af22fca2e141744c9cfca04239b48b0a31303b26c633ca5f341"
   end
 
   depends_on "ruby" # Requires >= Ruby 2.7

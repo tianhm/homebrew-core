@@ -1,27 +1,26 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
   homepage "https://docs.zizmor.sh/"
-  url "https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.7.0.tar.gz"
-  sha256 "9564db26f6e134a8f23f6d92c48a25c7cf457fed5de5ac76643cd45abf098129"
+  url "https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "f87f6298325b980f5b5415ac2d381302e00cd624528d6b858ed54487655ef1ce"
   license "MIT"
   head "https://github.com/zizmorcore/zizmor.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe997f8811e7eed3e1435a75557269e5ae510b047dfc169a641555a699ad2dc6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89921f02ba68bac05eaff29c8c1f7cb3a707f9b89710b25b51dfaa1b4755f86b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c43af3dd890eb1782e27aeeb772cf589f724529b4199c879d598360a7bbb5c44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "29dfae0331e97244575914cabd1858f30d7f5b17d18fa36524fbff4e0287a5a4"
-    sha256 cellar: :any_skip_relocation, ventura:       "b8c53542d2d4c4c99c370c4e313013afec187bc3394cdf9e443858c52575325f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcce1f98efb0beaafd24de5f3aa74a6d2d5dd8d2d563d4589d5df0959194aebd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f32ca3503f3465cad4d5fe6fab6905e10753b9c41b16887350b3d3cc69020821"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6c44ca9a6ec98cd6fc48e0b1d5034daa97d5cab27ffac9a8fe1da62daa0b3a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8642968c355e134b33c671afa695268b2c99b167d0f6fbfffdc11cde4c7e9b1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b37f45c6eea8841f5e7af160f64365a5f4cc9c219acd7671ed5c7afd360f579"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6fff49e0bf4b32ef3dae4a7c98f72d2493977440bbeb71c1830038c1dd1993e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "7771b7921995e0ff91e239937d7d36059b0c49e856c24b37244a272db9d52f72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c13257e10220c0270d8923bb0268fd1cce851ad92010d8fedf1546877cceee2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f617348507beecfd3e0f0da6953b976a044eeede86900843a8f9ba577b2d49"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/zizmor")
 
     generate_completions_from_executable(bin/"zizmor", shell_parameter_format: "--completions=")
   end
