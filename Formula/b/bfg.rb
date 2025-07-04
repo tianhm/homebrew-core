@@ -10,6 +10,8 @@ class Bfg < Formula
     regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e6ab06431b47f90f783c186032521800d0fffb1f9fffb842c0de85e624d54d2d"
   end
@@ -18,10 +20,7 @@ class Bfg < Formula
 
   def install
     libexec.install "bfg-#{version}.jar"
-    (bin/"bfg").write <<~SHELL
-      #!/bin/bash
-      exec "#{Formula["openjdk"].opt_bin}/java" -jar "#{libexec}/bfg-#{version}.jar" "$@"
-    SHELL
+    bin.write_jar_script libexec/"bfg-#{version}.jar", "bfg"
   end
 
   test do

@@ -1,18 +1,18 @@
 class Act < Formula
   desc "Run your GitHub Actions locally"
   homepage "https://github.com/nektos/act"
-  url "https://github.com/nektos/act/archive/refs/tags/v0.2.77.tar.gz"
-  sha256 "f0e43fe9416ad796035ad3b435dc6d8f6db6997d569f3e793d25f9ed7635f08d"
+  url "https://github.com/nektos/act/archive/refs/tags/v0.2.79.tar.gz"
+  sha256 "0a161cdaa1088b46691434042b2d7d1cec0df168c3601070d562bfc639c0b801"
   license "MIT"
   head "https://github.com/nektos/act.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10e4a9debd5171a0594078b426ebf51224e8daddecdd4c5e17c7ed9243489c79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91ee09eb60be6ff814a890a16210153379bf658ba06f8677372c79eaa5a501c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6cbe0f56364ece21eaad866ab610b92b054e62e94c23ef1f3bc0765b674d899"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc2eee9223f4ebc9f460637cb6434af15c8e267988f92d4d28858f42c1170033"
-    sha256 cellar: :any_skip_relocation, ventura:       "a9901a43735ff91b5f924173b51ea2dc5b23e5b587779e26c3ee9962a219969e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4956aa4146f211db41174fbe88409d2bae380e8ee2985cf2d6037f5b4786a692"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4900c53b1d7438e9288b0b3ce70c5655c1cd45de439dfe201400732b9e95407"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e2c24f634259a2a09aa8874519b838495f2c660c00c7e25740ea3741718b188"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bed662ba4279e065633951498a8e99c6628bbd0177111fc2c87ecf04ff1f1ec6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f68b23498e2fc37c38b8db855c30fb84a58ee75daef7f626558fe64efe40a0a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e599ca5f75e7b2aa00a6d61f450501c558f10cf8f8815bf0181cccf4192055f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acccdd4f4d42ee898282ed25f17f8ae921138ae4b5b75235e126c12c6ed36a6b"
   end
 
   depends_on "go" => :build

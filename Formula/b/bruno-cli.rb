@@ -1,18 +1,18 @@
 class BrunoCli < Formula
   desc "CLI of the open-source IDE For exploring and testing APIs"
   homepage "https://www.usebruno.com/"
-  url "https://registry.npmjs.org/@usebruno/cli/-/cli-2.2.2.tgz"
-  sha256 "8bcd0de0c3ce7d94179e4385d07f7f7936f869cb1d5333a9f4bf7c8f9b655853"
+  url "https://registry.npmjs.org/@usebruno/cli/-/cli-2.7.0.tgz"
+  sha256 "9d2922c230cbd7b65481fa3ea76105c0c4ef3e477a45742237aede853b63be09"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ceb72d20e15cc304fd75e17fd7f700723616926e5fefbb6b47d948e5f8b55ce8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ceb72d20e15cc304fd75e17fd7f700723616926e5fefbb6b47d948e5f8b55ce8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ceb72d20e15cc304fd75e17fd7f700723616926e5fefbb6b47d948e5f8b55ce8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4537f64a47548d79162b248e8e1d41f537e7f7b44b7dccad206bf8f28d2da88a"
-    sha256 cellar: :any_skip_relocation, ventura:       "4537f64a47548d79162b248e8e1d41f537e7f7b44b7dccad206bf8f28d2da88a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceb72d20e15cc304fd75e17fd7f700723616926e5fefbb6b47d948e5f8b55ce8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ceb72d20e15cc304fd75e17fd7f700723616926e5fefbb6b47d948e5f8b55ce8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9ee4aa146d7d3a1add079e41820bcd47cef18d394b6b5f85407d2f70a6f301f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9ee4aa146d7d3a1add079e41820bcd47cef18d394b6b5f85407d2f70a6f301f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9ee4aa146d7d3a1add079e41820bcd47cef18d394b6b5f85407d2f70a6f301f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8a60124ab8fceb2e0238e0ef5fce1e3851c6ce408b55fe764ef2c9ad900b152b"
+    sha256 cellar: :any_skip_relocation, ventura:       "8a60124ab8fceb2e0238e0ef5fce1e3851c6ce408b55fe764ef2c9ad900b152b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9ee4aa146d7d3a1add079e41820bcd47cef18d394b6b5f85407d2f70a6f301f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9ee4aa146d7d3a1add079e41820bcd47cef18d394b6b5f85407d2f70a6f301f"
   end
 
   depends_on "node"

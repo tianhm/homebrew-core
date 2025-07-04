@@ -5,7 +5,7 @@ class X264 < Formula
   url "https://code.videolan.org/videolan/x264.git",
       revision: "31e19f92f00c7003fa115047ce50978bc98c3a0d"
   version "r3108"
-  license "GPL-2.0-only"
+  license "GPL-2.0-or-later"
   head "https://code.videolan.org/videolan/x264.git", branch: "master"
 
   # Cross-check the abbreviated commit hashes from the release filenames with
@@ -37,6 +37,8 @@ class X264 < Formula
       end
     end
   end
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "599b5307d2eed20dd72830c722dd30faeca5fa7f87b9a36c122ed575311d84fc"

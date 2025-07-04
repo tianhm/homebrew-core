@@ -1,8 +1,8 @@
 class DockerCredentialHelperEcr < Formula
   desc "Docker Credential Helper for Amazon ECR"
   homepage "https://github.com/awslabs/amazon-ecr-credential-helper"
-  url "https://github.com/awslabs/amazon-ecr-credential-helper/archive/refs/tags/v0.9.1.tar.gz"
-  sha256 "0f186c04c4f90fde02add338cf85f7136a2b7aa52bf2f6ae2130244ce1132393"
+  url "https://github.com/awslabs/amazon-ecr-credential-helper/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "872f612d8ff2ec294024c58b5ca452bebcd9eeceb29e105e159e5579ec6056b2"
   license "Apache-2.0"
   head "https://github.com/awslabs/amazon-ecr-credential-helper.git", branch: "main"
 
@@ -12,13 +12,13 @@ class DockerCredentialHelperEcr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fedaf37d87aae03d6e661d21a997d2913dd09e77754f0574ad6936405fcd1597"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fedaf37d87aae03d6e661d21a997d2913dd09e77754f0574ad6936405fcd1597"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fedaf37d87aae03d6e661d21a997d2913dd09e77754f0574ad6936405fcd1597"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a7e351e896541eb5048280a91cfbfc0888ecdc9f0a6111c2d18391d4dd7366f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4a7e351e896541eb5048280a91cfbfc0888ecdc9f0a6111c2d18391d4dd7366f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36baad59d47edd5adb202e9c87fab1c00bc7c58c09d2bd3e3cdea6d2e24e7bfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b885a402893475b5e4fb09e712a50af51a7ad9f1edfae2adaa782f8444fc373"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "310ebe1f0703c4029bc2d6ba98e6d687097027a27fdecaad0d5b499a73a720ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "310ebe1f0703c4029bc2d6ba98e6d687097027a27fdecaad0d5b499a73a720ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "310ebe1f0703c4029bc2d6ba98e6d687097027a27fdecaad0d5b499a73a720ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3779569bb4207c50dc2cdbdfa61636241e9bcf04186d99667b2301b6150f90c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e3779569bb4207c50dc2cdbdfa61636241e9bcf04186d99667b2301b6150f90c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af285a04fc0326dae93ad0fa43640e914b3fb360d148d0f5def253d272815bcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d8cac37394c8753de28ee0befb678fb8a3cd2e2cbbd4dfaac0d46b05b52e54"
   end
 
   depends_on "go" => :build

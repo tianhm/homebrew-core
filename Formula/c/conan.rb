@@ -3,19 +3,19 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/fb/59/c53bd6aef9a7a3c29e2966b121a00bbee0f7f3c5702a9bdd25c15cfe9691/conan-2.16.1.tar.gz"
-  sha256 "e5b2aac9dab4f23e95f62a7c62dfb33c5f4522fab34332120c8be6eca11f5bec"
+  url "https://files.pythonhosted.org/packages/c7/55/9a10f21dd6dc9137c6e7b51eff7c54ab92400812e6e795d1a991ead00b54/conan-2.18.1.tar.gz"
+  sha256 "5d8e9fac7614de9297933f65de8f17db14851a871cebc962f4856b7c294f43c5"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "81682fd11adbe683853c6495147f7110af106bcfe8b2ec929d92aa6738a2d868"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8a0d81d67ed6fd3e54670cc3e311cc7ebe5954629386f83387e597e1a6f1f6b"
-    sha256 cellar: :any,                 arm64_ventura: "70eb5f275455e7b417fd6455b12e73514ef3faa9dbca70b0f545be7ec5202ce9"
-    sha256 cellar: :any,                 sonoma:        "726761ea2bdfed63e5511a4b72af229af41dfc45161a1347094a13b3d4ee6038"
-    sha256 cellar: :any,                 ventura:       "2260de6a8861b39e26b71a19f9aec908091a93567936b0059256cf7c93d0b23e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75df57d483ee21aaf222a0f3fb62f2c060097e7f3fbaa386e41a683e4fc3cd3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3494473163e05b57aefbd72635cce45f0e994ccafd5755eb0cd8981756471cab"
+    sha256 cellar: :any,                 arm64_sequoia: "3efa5d2850bd4b79e54c5820a23d914caf11044927eb68bc91314a74a9e739ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbcfec1c57eb39116d4e8167866217f1377b9b07d7675aca4660ba812b8c09c2"
+    sha256 cellar: :any,                 arm64_ventura: "26ce6f03a2717ddaf815c6ae660ce4727734aa3ba0595b7cb3d0e83dca913f85"
+    sha256 cellar: :any,                 sonoma:        "292d1f8769727c07305186c9705ce4274d8db6d29a920d753863c9f3d8ce93ad"
+    sha256 cellar: :any,                 ventura:       "e1da1805f8ba905d31dee76f53ff036c0e152099619494f604ab74833545d99f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b01bb48c5fc45316d03fd61aa2cd3d59d5ad68ed7e0ff58612d17be6ad9ae9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff7c48d045a35b29e66575185262a2eb3bd3467b665b7ff8e2571868c6ce71d"
   end
 
   depends_on "pkgconf" => :build
@@ -25,8 +25,8 @@ class Conan < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "colorama" do
@@ -75,8 +75,8 @@ class Conan < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "six" do

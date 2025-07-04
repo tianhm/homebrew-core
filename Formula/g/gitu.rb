@@ -1,19 +1,19 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https://github.com/altsem/gitu"
-  url "https://github.com/altsem/gitu/archive/refs/tags/v0.31.0.tar.gz"
-  sha256 "a6eafe8fc5ce0dfec029d919bc970de330e6d5d8404d7f57ba89be27e7feec1c"
+  url "https://github.com/altsem/gitu/archive/refs/tags/v0.34.0.tar.gz"
+  sha256 "65fac3b521fd94bc7a21585df7f8c75930beb1b62e6a1f8760333f51245161f5"
   license "MIT"
   head "https://github.com/altsem/gitu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71ded9c5875c835df107d664a0c19397e6ac8ef989035b456eded97d619ff4c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "541aefb18ba19fa9efe9a9450b9a028b5c6fe600aa6c38615e9a5bb3d17fdb3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "deae137c427764d86c006ed8247af8b6f6ef73d3c2864e5e073263566174b18e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28c10ba1b0f94e63cc945e3d2d6f40268a16d4e6f3c3260a7ad1672bb6e7dfae"
-    sha256 cellar: :any_skip_relocation, ventura:       "e3ef2fb47522664afc8c238fcb5d032d17e97f76b2ad3dbffcf1078382d5368d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8796fec41b1d3027f346bf3296e0c11dd74ba76270641359cf0fb2b9820764c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb0b1adaa66d8e1f33afa763077ea0484ff981ee12b1b937c45b8e22c05a9b58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "123d1c4cb97930bc1af447704cfeb144614997bdee7f2d1591fd7f28f0c33bb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a7468ac17d8dc956b5408d171e5cab946d24796b3406e9506691a98bf679f86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ffd3a17e42218003a26e888f8dda387da27c5a951d82adfbf39152978eb2339c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5597ff2d6ecdb42fae33becc3915fbc12476a24c9991de77c15458ed10d56380"
+    sha256 cellar: :any_skip_relocation, ventura:       "72bb2bed9ff731253664aaf19ad5e84c027c29ce628646956da4e8ace85ce0f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43d1700321ee65c312bbb5d879c9664ed04531445658a20225c4b28bb43a81ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6170214924d8ef5f9f22069d7442e36795430fd7901907a2e0597d348b03cd46"
   end
 
   depends_on "rust" => :build

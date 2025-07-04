@@ -1,26 +1,35 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https://dprint.dev/"
-  url "https://github.com/dprint/dprint/archive/refs/tags/0.49.1.tar.gz"
-  sha256 "df019b295ff137ccaec3ad8c7a39282b485b6381ff5a3519ec18bd3d7c89ba72"
+  url "https://github.com/dprint/dprint/archive/refs/tags/0.50.1.tar.gz"
+  sha256 "85197a9469fe479fc278e77e87ede6eeb55b7d42d0a530e8b828f3ab9b213358"
   license "MIT"
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b0e4b377e98ad778793484a3dff59f74b29906ccde4b94f52acafb9917195a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10a11ad7af71def0ba4b5a24c8aabc87563cbe745aa4b9899308e22ecbdbf844"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b317e6c03f9dbfb204b69c5600b46a480969b4754939d6790ba84ef504a5f21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "76c79faf66dab060c0f8a12748640b27b4749751c52e61ec066120cc8e49e48b"
-    sha256 cellar: :any_skip_relocation, ventura:       "888304a28f1df47eb8dc5acbfe7c7ab7ea3ed82bf2dc01b8fa6e4cad48b3d526"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bcd8dba5722c9dd55148118451136d91948d2d641058a7b923e2b9436af151c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7408ff0f353f0797570b56ba614081abe5fbc553f97d11c4ef7b2f0b175c581c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94f0c63c279e6557b34abaa5a3daf13ea74a4cc8ad12589eab0b3093f27b7fb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c743935d64069338d522f7b6d6a75f6b46f9e2cd9f8abb8dafc6f404a66ac51"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e37f2baf1a456129bbf18c038aa5955ea13b936fc53464c953d42c0296fd290"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f4c59f4c7cbc9f3f96b7d6673cef9cfa954b19762b6ad4e804cf70ab114f17f"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6f12a4a3dbfc3f65320207500aae56e03c7365206ce800b45d2b643ea8069bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5f24e032a52f6ddfb0ce867d0c16f702b31eac5cc22a607c1fdae53999d8698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97407733307f31f970755ee15f12ca334e32287e5d0350d900fab3e6276de496"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "xz" # required for lzma support
+
+  # update deps, upstream pr ref, https://github.com/dprint/dprint/pull/1003
+  patch do
+    url "https://github.com/dprint/dprint/commit/bb6ddc6034f73adb188fb2c40aa34d0c6a7ec6de.patch?full_index=1"
+    sha256 "ea54bc0c12dbd3057a0c95d4c922fd35459f338112c14eb8dc4fe96eb742a733"
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "crates/dprint")
+    ENV.append "RUSTFLAGS", "-C link-arg=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
+    system "cargo", "install", *std_cargo_args(path: "crates/dprint")
     generate_completions_from_executable(bin/"dprint", "completions")
   end
 

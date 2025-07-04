@@ -1,20 +1,20 @@
 class ScIm < Formula
   desc "Spreadsheet program for the terminal, using ncurses"
   homepage "https://github.com/andmarti1424/sc-im"
-  url "https://github.com/andmarti1424/sc-im/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "ebb1f10006fe49f964a356494f96d86a4f06eb018659e3b9bde63b25c03abdf0"
+  url "https://github.com/andmarti1424/sc-im/archive/refs/tags/v0.8.5.tar.gz"
+  sha256 "49adb76fc55bc3e6ea8ee414f41428db4aef947e247718d9210be8d14a6524bd"
   license "BSD-4-Clause"
-  revision 2
+  revision 1
   head "https://github.com/andmarti1424/sc-im.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "585f98cda2324655c14dcd9d64acc8d07e1fd72aaf2680a6f770f59a4246f281"
-    sha256 arm64_sonoma:  "279bd5d4f6667722e3375d8538f84b54a131b2cb477477e95ac6b3d360df7ebb"
-    sha256 arm64_ventura: "81d1a05ef52307578a974ef1c729b03524b97ae9125d386918c737a48f8bd0a6"
-    sha256 sonoma:        "43dffed01d4f245375aad615bfc05593b62f2f54fe5b32b81e5181f1c9736b80"
-    sha256 ventura:       "5ceaed8adb32424c8484f4b8a24c87e90a269f3f3a3f1177934a88bfe7e4712c"
-    sha256 arm64_linux:   "4457a50b8a4ced2c0a2c66c4806c2f6bba4394ccc180fcab326e5dd8f042cce5"
-    sha256 x86_64_linux:  "c3927fa72b5ba98e83d749bfe3a31fab8bb45ca6c929019249e317638323a6a0"
+    sha256 arm64_sequoia: "7aba3a846b8467a016703a76d89d74adbc8dff5bf280bf2efdb74b606a3e9af3"
+    sha256 arm64_sonoma:  "ae3adeb54d88c80a5145201b65ecf2636275d50eabb26e7e0ef6ef1549b71deb"
+    sha256 arm64_ventura: "0c6b9e49eda65b7a772058a20a4db0706ee234f322f75b07eb8ca83d739c85a2"
+    sha256 sonoma:        "3aba21c49aa83ab69c8357bfdb4c9d9e789bbbb0bc3a2cf019518f3ab5f37ebb"
+    sha256 ventura:       "04b84b09e7caaff2ff0d41e673d1f061e465a9f2487e40819022d8975b9a160c"
+    sha256 arm64_linux:   "2591a8c40e0ca1f1e2e44ceed406531af4a641fc05d8d4950f21481e874b51c0"
+    sha256 x86_64_linux:  "a4d52f559c04305dcaeea5b9183df4a3dfd3b7175fc86e3222428693d704c72e"
   end
 
   depends_on "pkgconf" => :build

@@ -1,32 +1,33 @@
 class Recc < Formula
   desc "Remote Execution Caching Compiler"
   homepage "https://buildgrid.gitlab.io/recc"
-  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.3.11/buildbox-1.3.11.tar.gz"
-  sha256 "dfebf2b8a25ce9ed21bc3d5c4720279baf21e56dd7fb944ea9d30763a245bf59"
+  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.3.22/buildbox-1.3.22.tar.gz"
+  sha256 "e8d194422175d69691905801cde22fa172ef2e224ddcf1152a0f15f8a542e650"
   license "Apache-2.0"
-  revision 1
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "dddf3d0abbdc39059981d4f88788ae4bc5e214fca1f9b2a2cc18fa446a64d44e"
-    sha256 arm64_sonoma:  "e74be6e200b16f16ad11921f9fb38f6a27586e2e0ba5bdba476d44a3a351df02"
-    sha256 arm64_ventura: "88f2fe2acbcff0da6d0a22e211cf3ad4331848590b77c8b75d3626a50b9704c9"
-    sha256 sonoma:        "dee029828bdd85864c3bfbb4b73fcd04d9aa18bc159f32c7c0e95503d6dfa81d"
-    sha256 ventura:       "1b430f9939587470b285ec28c0b2440fa394c7803f36d80329d641445d45c128"
-    sha256 arm64_linux:   "b451693b4ce3d5fdde92a7276ef17bcb7a7534cdfcbc3f9442e7a40e267fd654"
-    sha256 x86_64_linux:  "4015528208f4e72d2ea535a8ff69c677f103bb47d313809716816c915db34ad3"
+    sha256 arm64_sequoia: "72cabba1cc9ca88b915f39ac9019bf2bff7f0ee8508da80bfda9156acd6f3258"
+    sha256 arm64_sonoma:  "1a6050613ace7cb8b58326485900bdf22aa66bfb63736821ea9abc9112757620"
+    sha256 sonoma:        "5d8207d21111bd1974803afe40ff7652a22c5bc029a1b5a9b4067302bf4c5e49"
+    sha256 arm64_linux:   "f47ae35ce1321679b2e54a7eaf77456a9f2402e0379be18832dc951838ec85da"
+    sha256 x86_64_linux:  "0d05ffcb5528c27f76b8ad991d52266d82351390853dde6a452a170e85fa1b2c"
   end
 
   depends_on "cmake" => :build
   depends_on "gettext" => :build # for envsubst
+  depends_on "pkgconf" => :build
   depends_on "tomlplusplus" => :build
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "glog"
   depends_on "grpc"
+  depends_on macos: :sonoma # Needs C++20 features not in Ventura
   depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "re2"
+
+  uses_from_macos "curl"
   uses_from_macos "zlib"
 
   on_macos do

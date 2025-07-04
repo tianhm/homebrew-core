@@ -1,19 +1,10 @@
 class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://graphviz.org/"
+  url "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/13.1.0/graphviz-13.1.0.tar.xz"
+  sha256 "13339b83ee5467001a035cfacd175702ac4b14f5d390f0d34e89437b29881278"
   license "EPL-1.0"
   version_scheme 1
-
-  stable do
-    url "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/12.2.1/graphviz-12.2.1.tar.xz"
-    sha256 "85e34b5c982777c30f01dfab9ea7c713b4335a2f584e62c0abb9868413eb915b"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   livecheck do
     url "https://graphviz.org/download/source/"
@@ -21,13 +12,13 @@ class Graphviz < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1021bca3aee2d641cc8b3741820f4df48c2f53916cfb6cff3ed1fc664ebdf5dd"
-    sha256 arm64_sonoma:  "067aecda0ddbf4b5593f81aaca952ef5d14992f9e0fcff692ba29cc2c868330e"
-    sha256 arm64_ventura: "ce8eaf49349dfd40a47ce364f7b33c94b812e05527ae92be9a58dd9202145734"
-    sha256 sonoma:        "82f8b94e10a0faeffb28cb097ac071707188ea26ab2fc66da607c49c37743d30"
-    sha256 ventura:       "6f35eabfb6acfebcd48ea4d2663307148f7bd8f54fe748dfa33eb173d794aba7"
-    sha256 arm64_linux:   "3121f09ca5ea69be612073ae70261f6303ab78f0337e490f41876ed0b63bfbfc"
-    sha256 x86_64_linux:  "67fab62f20a6882fff2a4863382566cd3e462226f121b6b415a22176e81c518c"
+    sha256 arm64_sequoia: "e799e4a7d2fbcb2b5d322986dea60d4256e8e1b5c1c1ab5480fa7e32d2e405ab"
+    sha256 arm64_sonoma:  "aaeb1f8883fe316f4792dcf694709b3e5599108f933e8fb2a899aa84becd834a"
+    sha256 arm64_ventura: "e3369d0d656b28e413d429b7e3aafba9763faab86b46db568b078fffaa623404"
+    sha256 sonoma:        "412dffb92791d044f6f8646c1da51424654283cbfacdbe8ca1e0cbc03b1405dc"
+    sha256 ventura:       "b8c3a88a8964f76d576f36fbbaf24aaf5639acd12438be229fad86f77e5414ad"
+    sha256 arm64_linux:   "1a6a9fb65405a5bc8ff59c8b350fd41b44d8a607f193546dd94861a08e7dffdf"
+    sha256 x86_64_linux:  "541fad631f1c345ee2d98d551be029ae011098cd673fb9e377e47bad3e032b0f"
   end
 
   head do

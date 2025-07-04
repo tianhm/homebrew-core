@@ -4,12 +4,14 @@ class Monetdb < Formula
   url "https://www.monetdb.org/downloads/sources/Mar2025/MonetDB-11.53.3.tar.xz"
   sha256 "23e1f6a73ac721298f9b611f18930b8ceda34c6f497a4e458034b7131660c070"
   license "MPL-2.0"
-  head "https://dev.monetdb.org/hg/MonetDB", using: :hg
+  head "https://www.monetdb.org/hg/MonetDB", using: :hg
 
   livecheck do
     url "https://www.monetdb.org/downloads/sources/archive/"
     regex(/href=.*?MonetDB[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
+
+  no_autobump! because: :requires_manual_review
 
   bottle do
     sha256 arm64_sequoia: "92579b5419866811ca88e4ee4d03dac2850756ca79de954dea65c9d859f1b8ee"

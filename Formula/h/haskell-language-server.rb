@@ -1,9 +1,10 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https://github.com/haskell/haskell-language-server"
-  url "https://github.com/haskell/haskell-language-server/releases/download/2.10.0.0/haskell-language-server-2.10.0.0-src.tar.gz"
-  sha256 "dd7ba032767e9a955f334617eef8f4b8b12b260191f97ad883545851f498dc0a"
+  url "https://github.com/haskell/haskell-language-server/releases/download/2.11.0.0/haskell-language-server-2.11.0.0-src.tar.gz"
+  sha256 "d6c7ce94786346ee9acb1ef9fff0780b8035c4392523f27d328ad018257d7f5f"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/haskell/haskell-language-server.git", branch: "master"
 
   # we need :github_latest here because otherwise
@@ -14,13 +15,13 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a49980333b291f0817180be4b6d35818b0d6ab670943623dccb9c9820f8339c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d23f1a7a36b002d29587f5077262654b80100471200b870bb7987e5d8448cd4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "61bf5b68dc9cd636f5a2ef3792a8c955a33e461544ce2da87efcb1cb29975358"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d2b798ae2b7c005c05170f7e92f653b939ed51e4f6e907e737ae9b3bf5645923"
-    sha256 cellar: :any_skip_relocation, ventura:       "e04bb44cbacf239ec843f840bc6887a760c4a021abc6996465a5d8d85b88947b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7784b1f454b182e6227b1ead86db9e4a04d5b22cef627bb3743ec4d95645711d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bab5d18cee8d36906dc58806f1c42ef705ad217c2b2521648284ecf900f8d042"
+    sha256 cellar: :any,                 arm64_sequoia: "7be400445f57f8ee34805bb545c823c9931bda77403edef1fe3405ca08c92f9b"
+    sha256 cellar: :any,                 arm64_sonoma:  "9fa7706a776f4dfcf82fcbcf383eb0c5c824a6acc06e81f616074353bc7ec6eb"
+    sha256 cellar: :any,                 arm64_ventura: "41e8c785115b01629f316c27fb74cc832d842c1539dc4764d892019c09c621be"
+    sha256 cellar: :any,                 sonoma:        "2caa0b5cac34bfbe307395de3d663718f3114021bbef8787d2d3766846a6cf36"
+    sha256 cellar: :any,                 ventura:       "9d12d6dd4f5724f7d2bd11abdc1b5f8da4188f6487fadc1ab4ee566f9e7dea49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de58cd51f2fb307f4fab971c18a75893414ba74df714c9cbc8d1da230441e740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b2199524258a615108132c1bb926f3d15016ad4841a9b7d27382241e226573"
   end
 
   depends_on "cabal-install" => [:build, :test]

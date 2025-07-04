@@ -1,18 +1,20 @@
 class JavaServiceWrapper < Formula
   desc "Simplify the deployment, launch and monitoring of Java applications"
   homepage "https://wrapper.tanukisoftware.com/"
-  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.6.0_20250416/wrapper_3.6.0_src.tar.gz"
-  sha256 "6fd1fbb5e337cc85efb9e93550d9719738f13cd3f2f361250130064ff16f8e0c"
+  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.6.2_20250605/wrapper_3.6.2_src.tar.gz"
+  sha256 "9adec5e1786d1ca50c1e2ff300f01b54a1fa4fbe631fd7512e096f7db4a9cddd"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4eee4be4d445246fb036ac331beed8d19e7f37ce56bd75ac270284302966a30f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d34e1a99bf4898821686e4990a6bf02d33e434032dddac0646558189abbf61b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0cf0bfeb97a43c657cb20ca55842f1f13d68070f7243037349c627e42ccbe60c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "930dc5cf281015c96fd01eefc46535cee54845e82b8c52c4b6e6dc8f698e4cda"
-    sha256 cellar: :any_skip_relocation, ventura:       "aa76c959b205c2909bd3e36692a7ff0b2cbc46c8a38dea96607e7a3725bf5aa3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc8275da16484756416eaf418118c3cc90628fc4f573be1d94a880523bee28b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9c17fa7f694e903651d19bbf3ee988dd140d7f98d011b478e5b89fb77982e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbab0b6ad974b3224734d45f8f8c324c50f5818edf966477b4285a0f2e13992a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcdd6d00deb470d7a8542ba65fe84a4b78222aca65f0a0137cff5a7ff3dc94af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "22e80ccd9a12fcacaec00a9359ddaf7c58bc936dd0aa0042ef25eac46fd2e1b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05bf4b4b9aa43398feb1a0d8ff24d1c259c8158914044d1f78bf0441f1533973"
+    sha256 cellar: :any_skip_relocation, ventura:       "8ef9ed8518305d3d2d5dd6a6ad3a78f0db279256c393f8b36cf5b6642ff41c26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6225995f4c1519f54f1987c72c9388b70a9c4e003443594c42d1e188be3dcf2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f282b50f8c2c2339db931a68ce8b7148f077c754ecff2934a1d05ed76c4a94"
   end
 
   depends_on "ant" => :build
@@ -57,7 +59,8 @@ class JavaServiceWrapper < Formula
       wrapper.java.command=#{java_home}/bin/java
       wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperSimpleApp
       wrapper.jarfile=#{libexec}/lib/wrapper.jar
-      wrapper.java.classpath.1=#{testpath}
+      wrapper.java.classpath.1=#{libexec}/lib/wrapper.jar
+      wrapper.java.classpath.2=#{testpath}
       wrapper.java.library.path.1=#{libexec}/lib
       wrapper.java.additional.auto_bits=TRUE
       wrapper.java.additional.1=-Xms128M
