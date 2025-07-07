@@ -1,19 +1,19 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.24.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.24.1.tar.gz"
-  sha256 "c4f8f9d25d3a00f80709583b87aa8312d01454090b73a413b43ec7ec7c07ba39"
+  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.24.3.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.24.3.tar.gz"
+  sha256 "5b06897b0e84489bbb438278ec73e4362442b2e05a63e40023ec1d0cccc6c576"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "1b2ace0ac8ed3de46232cce757c6c17821abcf62f77db2379b210bfeebbd245d"
-    sha256 cellar: :any, arm64_sonoma:  "affae8cd659814408ccae7f16116fec13e4c2323c12e3c8555858af87260a86e"
-    sha256 cellar: :any, arm64_ventura: "b77cc1cb7afd855da6308b5ec725145f8792a1e048d0912578bf7525a939e83e"
-    sha256 cellar: :any, sonoma:        "d6f3e8caa1ee63145f269ecf7f64f383106e55acb05b25a32d43ae5062de7d06"
-    sha256 cellar: :any, ventura:       "34886996f1f93ad7bfd44329ce84ed89ce0ff00f420fe8a5a34715482a832aa7"
-    sha256               arm64_linux:   "6da4308d9cc5120910b0706cdf52223b4b59c19db299495b43094ada6212fc19"
-    sha256               x86_64_linux:  "bfe12d34758600c26177abbd086a427fda4bf334d5d3f2446716632e32f03e1b"
+    sha256 cellar: :any, arm64_sequoia: "3670a3c8f1f1e082dfd57a4d85f8daed5c1cbce813313dfc38eff91f02659910"
+    sha256 cellar: :any, arm64_sonoma:  "830722db294712776ea4c81401bfccbd93f81e644c60f6276d00023576f7ff3c"
+    sha256 cellar: :any, arm64_ventura: "34e55212d8190c3bbda7b025b348e73ecf256c13a5df189f192118ad5f870796"
+    sha256 cellar: :any, sonoma:        "a33540c79e7a183871d70981c2a2acff5526cc888d82908931f1a88ff393c7f4"
+    sha256 cellar: :any, ventura:       "ef3cf79a29c5e136107d0fe21c13b4d84faa5002e4f42668816089c44b5d563e"
+    sha256               arm64_linux:   "f1bc3a03e892b24b9f6cd34aaf887f48b3ed19140a682e47bad9bd4fc5c88690"
+    sha256               x86_64_linux:  "0255f6921844a49dde817c77d5048dfa556d829aa0e7e0d0107c416dbae19d71"
   end
 
   depends_on "meson" => :build

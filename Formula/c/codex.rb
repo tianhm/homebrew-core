@@ -1,36 +1,49 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https://github.com/openai/codex"
-  url "https://registry.npmjs.org/@openai/codex/-/codex-0.1.2505111730.tgz"
-  sha256 "87fe060703384b92745904d6fb94c3763877af8173c9f0b796458cc8b8a2ca65"
+  url "https://github.com/openai/codex/archive/refs/tags/rust-v0.2.0.tar.gz"
+  sha256 "aa59d6af465d1fe89a82ae684ae3d8d5e6c1f6fbc270cc389c5966c6e969d867"
   license "Apache-2.0"
+  head "https://github.com/openai/codex.git", branch: "main"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccf94b7a469657b2ed31775771a66429dc05cf98538ea5e7e05326807ac46f0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ccf94b7a469657b2ed31775771a66429dc05cf98538ea5e7e05326807ac46f0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
+  livecheck do
+    url :stable
+    regex(/^rust-v?(\d+(?:\.\d+)+)$/i)
   end
 
-  depends_on "node"
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de52c42521b1eb60600fbdf03acc0ad0d26fd1be3eefbc52025ea480499ce75f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f1148326eb88cd542defb40f3a67e516f68b43ba5c125e0051b8b2001286b71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf952e4aaa33a0e7a466f88142b2308b666183356817078009fa509287a1bfd0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "900f5c341f0d92d0ab57f154feb36e9e74c194adbf7b8780fcc0ed5d185bcfbe"
+    sha256 cellar: :any_skip_relocation, ventura:       "4294b7944faf2913410c33215d751f507ccd1f845ed2be06acaf6bb72915df1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ca98099f91a0c67dfc91b7d598078ca8daa926de395259f25dffb26e38a8b38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd89a26bfadf9c88d5f7aac77ab4832cf0c2f78eb4bfed8990b509589fa1a2c2"
+  end
+
+  depends_on "rust" => :build
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    if OS.linux?
+      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+      ENV["OPENSSL_NO_VENDOR"] = "1"
+    end
 
-    # Remove incompatible pre-built binaries
-    libexec.glob("lib/node_modules/@openai/codex/bin/*")
-           .each { |f| rm_r(f) if f.extname != ".js" }
-
-    generate_completions_from_executable(bin/"codex", "completion")
+    system "cargo", "install", "--bin", "codex", *std_cargo_args(path: "codex-rs/cli")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/codex --version")
 
-    assert_match "Missing openai API key", shell_output("#{bin}/codex brew 2>&1", 1)
+    assert_equal "Reading prompt from stdin...\nNo prompt provided via stdin.\n",
+pipe_output("#{bin}/codex exec 2>&1", "", 1)
+
+    return unless OS.linux?
+
+    assert_equal "hello\n", shell_output("#{bin}/codex debug landlock echo hello")
   end
 end

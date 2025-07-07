@@ -1,8 +1,8 @@
 class Jbang < Formula
   desc "Tool to create, edit and run self-contained source-only Java programs"
   homepage "https://jbang.dev/"
-  url "https://github.com/jbangdev/jbang/releases/download/v0.126.0/jbang-0.126.0.zip"
-  sha256 "0a9b63d37582e1826b5ed5f93f835cdc5e5b2701bf265149657d2ee3e195a8ff"
+  url "https://github.com/jbangdev/jbang/releases/download/v0.126.3/jbang-0.126.3.zip"
+  sha256 "c45ac143bc92f4b9d3d35742a4852db95cf8a25765a0aa4d705b236ae346c066"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Jbang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "22b65f5746318902340d7c47c02859bf7b359ecbb522a9fc1c74c3253d7bf8d0"
+    sha256 cellar: :any_skip_relocation, all: "4b789121508fbd4a44cbdcd6af9da637dfcbd9c8ccea1bfcb776677431b48ee1"
   end
 
   depends_on "openjdk"

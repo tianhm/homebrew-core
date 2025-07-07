@@ -1,19 +1,18 @@
 class CargoUdeps < Formula
   desc "Find unused dependencies in Cargo.toml"
   homepage "https://github.com/est31/cargo-udeps"
-  url "https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.55.tar.gz"
-  sha256 "bc84beb17213c69fd452d240a85697b96b167e45f43207e8f9202b5bd4277926"
+  url "https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.57.tar.gz"
+  sha256 "369a1387131ca0548d9bd14fe9d344a8ea217d7a6df2343db6fbdf21a8b94dea"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3560b35fd8924f4ec6302fa0ea7b863d6c414c3c0b3aa4e6e298492ed0ec8624"
-    sha256 cellar: :any,                 arm64_sonoma:  "606e4b2328d76762bd073eeab96270944674ce07434b3fae9443559a4fe2d9a8"
-    sha256 cellar: :any,                 arm64_ventura: "129f68ff4fe461ab23c956c0f3e51b67bc1b262ae7546d9c2c061ebc95a21f97"
-    sha256 cellar: :any,                 sonoma:        "2da242eca94859097a7baa91d471d939e64e21b111a90b9653af0b32a5a0315a"
-    sha256 cellar: :any,                 ventura:       "4a494ab4fef41d74b00be5c5d6346a46aed3c88a2c22951c7e7736e18a278bbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2530630d9bc5f7c7a08eb4c16c47c5a86ea709ace3a7db541f7482d2e0bc293e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50c44c0c93396485ab604ebf9c953afa7a83ef222c41caa1a1d53e9dec89250"
+    sha256 cellar: :any,                 arm64_sequoia: "288551b8c1acff4faaf2f8950b60d9de83e2a6f5643b4bb63ef3689c60f7d029"
+    sha256 cellar: :any,                 arm64_sonoma:  "d16e797594750fb8bd1ad1afc2a49901bea1c48587bef487c2155cb8192c4875"
+    sha256 cellar: :any,                 arm64_ventura: "367123823b4ca2e1bef335e576a33e24926ec638991bafca9144ab4917be0017"
+    sha256 cellar: :any,                 sonoma:        "5e3bfe32151d99bf0dc38f92ebba11452e225269faf7ffcc110b1597aaf72d4c"
+    sha256 cellar: :any,                 ventura:       "da6af4ba4cc045091613a44c346e625977ffc18ae16358e58de46c87260d9d40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce72a837695ac3d74564b1f7d372f717b65deffa5c69301a4d3d0b74eae59e87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4708ce7778d28d320595eccb0c1e1c7184522a03fb66f1e16e3a0f6769eccdd0"
   end
 
   depends_on "pkgconf" => :build
@@ -24,17 +23,6 @@ class CargoUdeps < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  # patch to use libgit2 1.9, upstream pr ref, https://github.com/est31/cargo-udeps/pull/305
-  patch do
-    url "https://github.com/est31/cargo-udeps/commit/adede771b25ce753ca223cc1c5f36ff0951e5032.patch?full_index=1"
-    sha256 "e8119b2c2d6aada2b7f48c8011a0aec494abb516a443950fd8de1496497aefe2"
-  end
-  # cargo 0.87 fix
-  patch do
-    url "https://github.com/est31/cargo-udeps/commit/401859a2ea50a72e2764c997cf39ca805d3e7c5d.patch?full_index=1"
-    sha256 "f9be0d2587084c0d6e5ddb71b2a0b8a63271b7205a3871af1a32c9933ca4ddd8"
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

@@ -19,6 +19,8 @@ class Libcanberra < Formula
     regex(/href=.*?libcanberra[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "710648952f9dde5a4292a1d0911d3da6d471684f86eb2c0192b9a6110ae28acd"
@@ -38,7 +40,7 @@ class Libcanberra < Formula
   end
 
   head do
-    url "git://git.0pointer.de/libcanberra", branch: "master"
+    url "https://git.0pointer.net/libcanberra.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

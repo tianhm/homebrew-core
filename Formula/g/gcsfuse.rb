@@ -1,8 +1,8 @@
 class Gcsfuse < Formula
   desc "User-space file system for interacting with Google Cloud"
   homepage "https://github.com/googlecloudplatform/gcsfuse"
-  url "https://github.com/GoogleCloudPlatform/gcsfuse/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "b530ef33fd1b0eee5822caab7f594d36237fc7caa546acdeee0d10b15e714726"
+  url "https://github.com/GoogleCloudPlatform/gcsfuse/archive/refs/tags/v3.0.1.tar.gz"
+  sha256 "81483130468f0f954a8a6ea8eed01da7bdc4c8eeb32df362ccd2c653b41d9eba"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/gcsfuse.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Gcsfuse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "e7e1c78d7ec4ea99e30c3d159d4208caf8cded0d931a1a7c849d1ccd7180c939"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9cda40a50839b5c3cf7af861afac8d5cafa08c982430e89e117d489f9933d2af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "40b021344619350466d83defa1b88a848e3fb7b7f01ad04c08a9b0218b70982c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "30a816076f0ccc2275df470c5970c4237e343d9ef56fdf5edfb410a03969d7f7"
   end
 
   depends_on "go" => :build
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
-
-  patch :DATA
 
   def install
     # Build the build_gcsfuse tool. Ensure that it doesn't pick up any
@@ -38,18 +36,3 @@ class Gcsfuse < Formula
     system "#{sbin}/mount.gcsfuse", "--help"
   end
 end
-
-__END__
-diff --git a/tools/build_gcsfuse/main.go b/tools/build_gcsfuse/main.go
-index b1a4022..678f747 100644
---- a/tools/build_gcsfuse/main.go
-+++ b/tools/build_gcsfuse/main.go
-@@ -134,8 +134,6 @@ func buildBinaries(dstDir, srcDir, version string, buildArgs []string) (err erro
- 		cmd := exec.Command(
- 			"go",
- 			"build",
--			"-C",
--			srcDir,
- 			"-o",
- 			path.Join(dstDir, bin.outputPath))
- 

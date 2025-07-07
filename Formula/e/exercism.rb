@@ -1,8 +1,8 @@
 class Exercism < Formula
   desc "Command-line tool to interact with exercism.io"
   homepage "https://exercism.io/cli/"
-  url "https://github.com/exercism/cli/archive/refs/tags/v3.5.4.tar.gz"
-  sha256 "58dcd1a62552466b6fa3d3ad62747b1cfeafae5fca3b511c08f5efa9af22539c"
+  url "https://github.com/exercism/cli/archive/refs/tags/v3.5.6.tar.gz"
+  sha256 "f79ad5cfaca794ef21439f5b3b9c196074febc55605624cc4cc4c973c10c589d"
   license "MIT"
   head "https://github.com/exercism/cli.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Exercism < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edbed801d51e954a07e8361b1f046e7debe55a8d1f3395cb1b76119c322e6843"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edbed801d51e954a07e8361b1f046e7debe55a8d1f3395cb1b76119c322e6843"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "edbed801d51e954a07e8361b1f046e7debe55a8d1f3395cb1b76119c322e6843"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73e1f0791210f733ad58582e961694a6e48073fc3c05211fec65f187d446f1a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "73e1f0791210f733ad58582e961694a6e48073fc3c05211fec65f187d446f1a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db0470e98aa26162d4a8c02de1c650665b43b9331eac64e2a98cfa495993701"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e05a72c32c108ebb2ffecd867d81b0d6116d389e0ad411ae74d7b130572a15d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e05a72c32c108ebb2ffecd867d81b0d6116d389e0ad411ae74d7b130572a15d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e05a72c32c108ebb2ffecd867d81b0d6116d389e0ad411ae74d7b130572a15d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26ee99039c774094e39d20d6054d5bd7513f10d89be4590ae9838001870576ae"
+    sha256 cellar: :any_skip_relocation, ventura:       "26ee99039c774094e39d20d6054d5bd7513f10d89be4590ae9838001870576ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c9cf023f91a032386239d7773de841367993543b7b7745d7ee6154b16b8deb5"
   end
 
   depends_on "go" => :build

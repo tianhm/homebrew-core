@@ -2,8 +2,8 @@ class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
   homepage "https://opensearch.org/docs/dashboards/index/"
   url "https://github.com/opensearch-project/OpenSearch-Dashboards.git",
-      tag:      "2.19.1",
-      revision: "782801008fa7d872292e48caca1aca74be5304a6"
+      tag:      "3.1.0",
+      revision: "1feb86934e7f2d5fae58baebf1b98c5c0825bc3f"
   license "Apache-2.0"
 
   livecheck do
@@ -12,22 +12,18 @@ class OpensearchDashboards < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95d945ea43dec1783d7bdc106aed4b69700c5180d6e9226b83e424d29d13c8d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95d945ea43dec1783d7bdc106aed4b69700c5180d6e9226b83e424d29d13c8d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "95d945ea43dec1783d7bdc106aed4b69700c5180d6e9226b83e424d29d13c8d9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69656dbbd31c1c65560db170f3fd53f80600df218b94b49694a6c9e0ef864e7d"
-    sha256 cellar: :any_skip_relocation, ventura:       "69656dbbd31c1c65560db170f3fd53f80600df218b94b49694a6c9e0ef864e7d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b6abff88ff2905b620ba16d9c8040074e8291b92fb71816a7f128eb954fb072"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dadc59e74bce5e73e3a3b628b96186912e52bd9f32998d8437441ebeef72258"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0fcdde72e24e76dd676077a64875e9dde50091399cecbde3e3df2c68bd918d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb0fcdde72e24e76dd676077a64875e9dde50091399cecbde3e3df2c68bd918d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb0fcdde72e24e76dd676077a64875e9dde50091399cecbde3e3df2c68bd918d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19f06681277c94e58c55a50d289a5434d7dc7975dca38b1f57d07152f7d8db80"
+    sha256 cellar: :any_skip_relocation, ventura:       "19f06681277c94e58c55a50d289a5434d7dc7975dca38b1f57d07152f7d8db80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe2a3710e463941979bb74cc4e61ccc77462e353d0f130e7729f8aca8408b07a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40ee780ce2d4bfaa91cef6cedbfae558695354f60846dfa045d338448fc5aa8"
   end
-
-  # Match deprecation date of `node@18`.
-  # disable! date: "2025-04-30", because: "uses deprecated `node@18`"
-  deprecate! date: "2024-10-29", because: "uses deprecated `node@18`"
 
   depends_on "yarn" => :build
   depends_on "opensearch" => :test
-  depends_on "node@18" # https://github.com/opensearch-project/OpenSearch-Dashboards/issues/9459
+  depends_on "node@20"
 
   # - Do not download node and discard all actions related to this node
   patch :DATA
@@ -41,7 +37,7 @@ class OpensearchDashboards < Formula
     cd "build/opensearch-dashboards-#{version}-#{os}-#{arch}" do
       inreplace "bin/use_node",
                 /NODE=".+"/,
-                "NODE=\"#{Formula["node@18"].opt_bin/"node"}\""
+                "NODE=\"#{Formula["node@20"].opt_bin/"node"}\""
 
       inreplace "config/opensearch_dashboards.yml",
                 /#\s*pid\.file: .+$/,

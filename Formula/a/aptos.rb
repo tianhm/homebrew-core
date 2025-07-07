@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptosfoundation.org/"
-  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v7.2.0.tar.gz"
-  sha256 "135e0c1799cc6bfe4e570d40817f8548c8e89ddb06c690ed4737e56824334222"
+  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v7.6.0.tar.gz"
+  sha256 "3c1650f253b5c9b213c51d1de130f671af118a5611897214150ddcb4bcd3855b"
   license "Apache-2.0"
   head "https://github.com/aptos-labs/aptos-core.git", branch: "main"
 
@@ -11,14 +11,16 @@ class Aptos < Formula
     regex(/^aptos-cli[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0206105fff368a299a90a564d3bc2721310ebe7c73d45a3d8535263cc318028"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50a2913aef29c7bbfce6b09ccff72c0d688fe68023a556dbed2374cb815d2451"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c902ffbdb542944f9c8f41cb82eddf6caed2a0f4590b1d6838d91c39a50de28e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82ec06f8000c62227eb01550487a8e3be5cc0204683a579c44018013ecd5168a"
-    sha256 cellar: :any_skip_relocation, ventura:       "61551d586996b1b498087bc323cee13c2885a8102566633e8c48a804428664bc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c75d81c3c08217ec4ee7473c429ac545d48e9a0a1a2a9574829aff9f265ddab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc1f7c0851ecd2c3d0acfee0572bfd39eb83f2ae35655ad6366e2b56b9bfbd4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a0d88de34dde92d1d25a8f545ef7c1d19ac53f35f725389dced4a87a4562810"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf628eed0a1060cc92151a0a8fb400ba6f4c755aea05904c300ccc7ba4bb8a48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e9137d8a256576010f653d59ac59e9687efb4e2a30cfacf45c3aeb07997c343"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70a5b0dc7ed1150e2978642eb75965dafb7f9afb34113c0c952cc9417e3c211a"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed43d1a6bb7c33819390eb3b2e6d13a79ad3cae9fde21cc820c24169653f9323"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96d26173b895e402447e01879998297d17aef8654cdbebd749f5e8c71a073a56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eec10834e5669a9da38277cc5c264862cc12c180d1268ae40e3956503067394b"
   end
 
   depends_on "cmake" => :build
@@ -34,16 +36,15 @@ class Aptos < Formula
     depends_on "systemd"
   end
 
-  # rust 1.80.0 build patch, upstream pr ref, https://github.com/aptos-labs/aptos-core/pull/14272
-  patch do
-    url "https://github.com/aptos-labs/aptos-core/commit/72b9657316c699cfbef75216f578a0bd99e0be46.patch?full_index=1"
-    sha256 "f93b4f8b0a61d245e13d6776834cec9ecdd3b0103d53b43dcc79cda3e3f787ed"
-  end
-
   def install
     # FIXME: Look into a different way to specify extra RUSTFLAGS in superenv as they override .cargo/config.toml
     # Ref: https://github.com/Homebrew/brew/blob/master/Library/Homebrew/extend/ENV/super.rb#L65
     ENV.append "RUSTFLAGS", "--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes"
+
+    # Use correct compiler to prevent blst from enabling AVX support on macOS
+    # upstream issue report, https://github.com/supranational/blst/issues/253
+    ENV["CC"] = Formula["llvm"].opt_bin/"clang" if OS.mac?
+
     system "cargo", "install", *std_cargo_args(path: "crates/aptos"), "--profile=cli"
   end
 

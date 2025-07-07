@@ -3,19 +3,19 @@ class Pyinstaller < Formula
 
   desc "Bundle a Python application and all its dependencies"
   homepage "https://pyinstaller.org/"
-  url "https://files.pythonhosted.org/packages/a8/b1/2949fe6d3874e961898ca5cfc1bf2cf13bdeea488b302e74a745bc28c8ba/pyinstaller-6.13.0.tar.gz"
-  sha256 "38911feec2c5e215e5159a7e66fdb12400168bd116143b54a8a7a37f08733456"
+  url "https://files.pythonhosted.org/packages/f8/25/41d6be08d65bdc5126e86d854f5767397483acf360f2c95c890e3fa96a31/pyinstaller-6.14.2.tar.gz"
+  sha256 "142cce0719e79315f0cc26400c2e5c45d9b6b17e7e0491fee444a9f8f16f4917"
   license "GPL-2.0-or-later"
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "587564f2b16d8a3ddea2a2092dfce0b13a41cf58e754a4005d90e2879c161ee8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08f530d0f592cb413f5aeaeb78b4c29c6ecf0fe948ef29bfb893753553789028"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d84b07ebb17fee1edef346faf70d4d70052ed1fdcb9153f2a970607e0b5591a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d9d52524af170915bee4968f4ca8430257894b377cb308dc66c6835771c713f"
-    sha256 cellar: :any_skip_relocation, ventura:       "6ae43e011c0829ebb0ba4a972e44a680c10e6e058180abc4d68e2574053b6cbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a284364b0a6ac12e91293ce5b64a9bababcdbdf5044abb5dea1fbb5939e3f623"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9acf51b2ade652c578e709190d7c983c639faba1f0c46a4e2cffd15c5bf2eda8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8fcce6d4ceb27eaf2a3bf46f96ac87992befe2e35dc75e4f93be672bfc3ce2c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b1659ad4ddee15f2fb0e571afbf3f44892af3f39811ed89d0b8270ffc0a9ef7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da6d5965ac65ad3a7e34637c4672004f01dbe9ea97d558347267f2cc61a34f4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16bef6bee9eec84bd57d654a256cdfd50325bdba1db9845c87cdf5157c255f92"
+    sha256 cellar: :any_skip_relocation, ventura:       "dad9761093d531248b426be55b0e22d64c70a7eea30ebc6073b49bf5cbf07662"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16df0896355e6737fe751cde3e3860b82f4506b608ce7d2db5d744a4fe06b57a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37343e683fafc16eed927f4f706acbb759790ff4af43b0695b52ebbe04b4247e"
   end
 
   depends_on "python@3.13"
@@ -33,18 +33,18 @@ class Pyinstaller < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pyinstaller-hooks-contrib" do
-    url "https://files.pythonhosted.org/packages/99/14/6725808804b52cc2420a659c8935e511221837ad863e3bbc4269897d5b4d/pyinstaller_hooks_contrib-2025.2.tar.gz"
-    sha256 "ccdd41bc30290f725f3e48f4a39985d11855af81d614d167e3021e303acb9102"
+    url "https://files.pythonhosted.org/packages/5f/ff/e3376595935d5f8135964d2177cd3e3e0c1b5a6237497d9775237c247a5d/pyinstaller_hooks_contrib-2025.5.tar.gz"
+    sha256 "707386770b8fe066c04aad18a71bc483c7b25e18b4750a756999f7da2ab31982"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.15.0.tar.gz"
-  sha256 "16aa2c02ff34a902a38bddc29f6f720deb1fb6c6987c45ccb782430300f5ccc5"
+  url "https://github.com/Z3Prover/z3/archive/refs/tags/z3-4.15.2.tar.gz"
+  sha256 "3486bf5b35b185981cab0b0a81f870547648a1ca433085aa79afd17c44959751"
   license "MIT"
   head "https://github.com/Z3Prover/z3.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f3e3fbb6153448fc9fe3befc53a0170ad45369f07209b400d90305ce0d645a5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3163b8e0e65799a4e7a96e7d7ceb4a959386d77fdba320dd7bb0f381c19c1b3c"
-    sha256 cellar: :any,                 arm64_ventura: "221c41e0d66f5a2baeb60146f40875e2d6ca496d062b06c76d3924a4d15748f9"
-    sha256 cellar: :any,                 sonoma:        "f9274cd0950dd9c9314d19fb3cbc8baf7a4802ca3c4ef882bdb74df0c9fd2333"
-    sha256 cellar: :any,                 ventura:       "c151a05ca6866e2e83fc1b7d00bed224c5116f6d68ba645b1c3f1101b8c7fac7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "37cbe0ad948d47bce9e6d6c4856c4f5d9cf36e871ae2d55f236388e7496094e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "216b1f2393ca8c38e413daf5a5db5e572b7f769d3c4d2ce7963a8c9f559ac03f"
+    sha256 cellar: :any,                 arm64_sequoia: "f7f15b8067b785c6131501f87a4c5c83aed3b1877ec3e6329692d1f144ee4085"
+    sha256 cellar: :any,                 arm64_sonoma:  "09928918b5ab02f225d0161545d543cb7c6b3520328680deed2d663fdb4e56a8"
+    sha256 cellar: :any,                 arm64_ventura: "6f4623c97b742a73119dea2f3b98045362d2b888abb17657a8f85c691f8b5937"
+    sha256 cellar: :any,                 sonoma:        "bfdacc628b9f9122d3c8ab1cde6984617fdd8452550bf5beef64932c2b37128d"
+    sha256 cellar: :any,                 ventura:       "69a246e51631d635aa7c96d9cdac354cecd363bd209b78da12e8ce42bf98e490"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e994f9ed092486cd0929ad3dfe6b22d8fec1e6e9d67d6888254f2aa332d0d6d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7db44ef8b09acd2e27f7539b923604ec74dd37f10f93c59c070b5971c91bcfd7"
   end
 
   depends_on "cmake" => :build

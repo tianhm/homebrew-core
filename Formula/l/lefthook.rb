@@ -1,18 +1,20 @@
 class Lefthook < Formula
   desc "Fast and powerful Git hooks manager for any type of projects"
   homepage "https://github.com/evilmartians/lefthook"
-  url "https://github.com/evilmartians/lefthook/archive/refs/tags/v1.11.12.tar.gz"
-  sha256 "725f048940791dd56acd2c54e2d0896e7cbb65a5b9896a12e797ef52e3cd0fef"
+  url "https://github.com/evilmartians/lefthook/archive/refs/tags/v1.11.16.tar.gz"
+  sha256 "aa99bca23b9d840d8f465adf402d6dffadea6d84409e1342b6629eb995d36338"
   license "MIT"
   head "https://github.com/evilmartians/lefthook.git", branch: "master"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa031368754a5a721b38c306a9f90fc7fde36b3dd8c8b34cecad51b263766195"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa031368754a5a721b38c306a9f90fc7fde36b3dd8c8b34cecad51b263766195"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa031368754a5a721b38c306a9f90fc7fde36b3dd8c8b34cecad51b263766195"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfaeb2f8868af83402711efc09bd7868a963731b12ffc044108444e8f86a2431"
-    sha256 cellar: :any_skip_relocation, ventura:       "cfaeb2f8868af83402711efc09bd7868a963731b12ffc044108444e8f86a2431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b684d44aa8c064a47764aec66bc3f7d17507a191d3f61196a4ec1945d1957a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6388a949504e3c57b3272d282756c0cd104d127e4c54e29b3517d4f38abfacb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6388a949504e3c57b3272d282756c0cd104d127e4c54e29b3517d4f38abfacb6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6388a949504e3c57b3272d282756c0cd104d127e4c54e29b3517d4f38abfacb6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66b760819959a6944aae813bc7c9207e38b1974498823d799eacf07cdf54911c"
+    sha256 cellar: :any_skip_relocation, ventura:       "66b760819959a6944aae813bc7c9207e38b1974498823d799eacf07cdf54911c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b7e6d95399a85f56b08aed1d3c38a379a649b2ee74c4aecb10f4cb67d1bf4e5"
   end
 
   depends_on "go" => :build

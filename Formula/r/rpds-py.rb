@@ -3,18 +3,18 @@ class RpdsPy < Formula
 
   desc "Python bindings to Rust's persistent data structures"
   homepage "https://rpds.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
-  sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
+  url "https://files.pythonhosted.org/packages/a5/aa/4456d84bbb54adc6a916fb10c9b374f78ac840337644e4a5eda229c81275/rpds_py-0.26.0.tar.gz"
+  sha256 "20dae58a859b0906f0685642e591056f1e787f3a8b39c8e8749a45dc7d26bdb0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fd53408b3574c7b3198ab7bf52d34e31c14c99715293ea1bd41bb3aa6127ebaf"
-    sha256 cellar: :any,                 arm64_sonoma:  "1239483d29025eca9f3bf9b5d47882e1399fc80e2d6acae523bc42213e3839c2"
-    sha256 cellar: :any,                 arm64_ventura: "469d0e334b444ee13a85474199f6af039f542cf9c9d6d943b75238ebde28c04f"
-    sha256 cellar: :any,                 sonoma:        "b46aec89e60a95d44bc951385994baae46124a1c8a5992e19446695bda2c0fdd"
-    sha256 cellar: :any,                 ventura:       "ba129f9b47e0577e69a112a89d45572a20df2bfc5b6bbacdd6a5fd649e219ffa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ce1ee93bf7b413aa5693cf6f61f7a5e02419ab8958b61f64a4c401beeb2b722"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "146658a35375c7673127edafd152d005e92bf668b7bdb2841092a1350c03ae7c"
+    sha256 cellar: :any,                 arm64_sequoia: "5e9757d980d1b6e974730180e2f95b212716e89044caf21e8aaef4ee95099ca4"
+    sha256 cellar: :any,                 arm64_sonoma:  "af0ad98b3b00b89969d48c10663fbf2ee1039a86a670495ff8f998d10c04b4e8"
+    sha256 cellar: :any,                 arm64_ventura: "9893ede65ebf7311f88de73f910e0d59ba660b9d6f2281148203fe71198e1539"
+    sha256 cellar: :any,                 sonoma:        "fe0f9550cbf2fea19beae46ac9ce65335f50f4b98b8b0624d49b26307ded3b41"
+    sha256 cellar: :any,                 ventura:       "838353f03f200dad814e6df49a282a25b57f1c67159396f83539601d693d3693"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dc63d7d4e6702f40dd7fed882185516c17ede35642466f80a59007747dcdebc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90bb6618fa331fc5d87f426f9854fc58d3951861920d4ad9d6b75405573bb8f8"
   end
 
   depends_on "maturin" => :build
@@ -28,13 +28,13 @@ class RpdsPy < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "setuptools-rust" do
-    url "https://files.pythonhosted.org/packages/e0/0c/db5a68b4e95229db38a1793d58561870bd68b92b95fed183c6cd48910c9f/setuptools_rust-1.11.0.tar.gz"
-    sha256 "f765d66f3def6fdc85e1e6d889c6a812aea1430c8dadcf1c7b6779b45f874fb2"
+    url "https://files.pythonhosted.org/packages/e0/92/bf8589b1a2b6107cf9ec8daa9954c0b7620643fe1f37d31d75e572d995f5/setuptools_rust-1.11.1.tar.gz"
+    sha256 "7dabc4392252ced314b8050d63276e05fdc5d32398fc7d3cce1f6a6ac35b76c0"
   end
 
   def pythons

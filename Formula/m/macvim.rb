@@ -22,6 +22,8 @@ class Macvim < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "7eed55dfdd99df0050437af8528d20382f13760845ae638f1bf505a415a3bfa3"
     sha256 cellar: :any, arm64_sonoma:  "55fe4b8cd65abdae6855028c63607cde1a7d85e3a47de4673ced52abbb65128b"
@@ -41,7 +43,7 @@ class Macvim < Formula
 
   conflicts_with "ex-vi", because: "both install `vi` and `view` binaries"
   conflicts_with "vim", because: "both install vi* binaries"
-  conflicts_with cask: "macvim"
+  conflicts_with cask: "macvim-app"
 
   def install
     # Avoid issues finding Ruby headers

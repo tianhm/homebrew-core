@@ -1,8 +1,8 @@
 class Bmake < Formula
   desc "Portable version of NetBSD make(1)"
   homepage "https://www.crufty.net/help/sjg/bmake.html"
-  url "https://www.crufty.net/ftp/pub/sjg/bmake-20250414.tar.gz"
-  sha256 "43258a0b819f3e362dd66c05b8212ea977606945f3887ba1b6ad612affabc9aa"
+  url "https://www.crufty.net/ftp/pub/sjg/bmake-20250618.tar.gz"
+  sha256 "9651ce09d31b64a90625ab52af54fd90bf78cfe706c86991d0b44cb3033c0eb7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Bmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcb77e6358390c80463b999d8979ceae3e69a3e5e3cf8d05a44a98a96d05f57a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "230aae790cc684473ea54bd90bd7933214a41de7b4ced82083b19da564470b58"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "170947e3fff8897d4dc593e4f9f7b14adc58cd1e0d926b711602c109f062a49d"
-    sha256                               sonoma:        "a0c140bba308f37cf40fe5fe83e9a377e71a084649a302cc8a494eb6876395c5"
-    sha256                               ventura:       "3963568a17f0874afc6b8681c17f670528bc69fa059704afc3259e2d52db7b88"
-    sha256                               arm64_linux:   "9efc697537e519aaf95d3207b689301142729ad7ca26c8a8e792eea15e535b1a"
-    sha256                               x86_64_linux:  "5aaa87b011f69dc54471377b0014bc8f2e9ffb4030d454862446d09dbe6262ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5990b32cd2844212de6c7dd92b5d59adbbbbb19c96d4f4979ca75026309cae22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50627bd7f9da343220854e9e108da6f15123cf42225fd6a79b75089502389c77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b601d119275912f4bb2de5b96591d6fb2eff57565d4c9b071b7d02ea42cb896b"
+    sha256                               sonoma:        "75361c2334d09948a2711203b8dfed9bdd9c23038123d7cb46ee76709f033da6"
+    sha256                               ventura:       "392f6dbebd8a79bdde4e14c4513b66ee096394dea08f91754d8fe45aa10f4b75"
+    sha256                               arm64_linux:   "92fd21b5b6cccb3af28c5b7408d9a077e84910ea5c22bb932286c63c5ea8165b"
+    sha256                               x86_64_linux:  "c5b222158359e846077808ba7352ad70d90f7edf68a2dd1cd637ef3609a56a6c"
   end
 
   uses_from_macos "bc" => :build

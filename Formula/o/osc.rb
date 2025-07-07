@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https://openbuildservice.org"
-  url "https://github.com/openSUSE/osc/archive/refs/tags/1.15.1.tar.gz"
-  sha256 "730f8729fb7d29425d852c99d0359e94c5ba77575be9fe0521ff39b219910d67"
+  url "https://github.com/openSUSE/osc/archive/refs/tags/1.17.0.tar.gz"
+  sha256 "12e1d4fcca71a5b8e23dfc6476292d6c70bdda240ac597b7664d6df7aea90469"
   license "GPL-2.0-or-later"
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7950e723a879d0c054e41bfe2c7b41749f766723e9114f7a266df18f3f8df678"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7950e723a879d0c054e41bfe2c7b41749f766723e9114f7a266df18f3f8df678"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7950e723a879d0c054e41bfe2c7b41749f766723e9114f7a266df18f3f8df678"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b3d2244d69cb01ede8df9142651dbc0357ea0b20778944df540b91a9f1bcaa01"
-    sha256 cellar: :any_skip_relocation, ventura:       "b3d2244d69cb01ede8df9142651dbc0357ea0b20778944df540b91a9f1bcaa01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7950e723a879d0c054e41bfe2c7b41749f766723e9114f7a266df18f3f8df678"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7950e723a879d0c054e41bfe2c7b41749f766723e9114f7a266df18f3f8df678"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40ae5b66b864790321c7bdd8b0987c02e96865321f964c2ad3db98ee5d84ace8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbe7cae9149eb1e592884ec10aacead23061f0ec129e67a2d0e78d9ce520a65e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f89db80a1817eba3ade8f4cf5c8bab0fb9b285da249363b09ceefcb0a715c523"
+    sha256 cellar: :any_skip_relocation, sonoma:        "95d34cda80981cbd952941efca7fd1db43a0ddd7444124a1bc1e0ffe559bfef0"
+    sha256 cellar: :any_skip_relocation, ventura:       "76e0782be2a526a22e2ea9b539173309ba9c7ab525145fc8eb2b48df12f1d940"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91ee2640c2121fcb3e7c20f2aff7d26108547cf46db615d6a6a1a650c8b95402"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d2d2ddd5e464a190b21b9ad7ebef8b7a576d0218498293c80ae3188f60db18d"
   end
 
   depends_on "cryptography"
@@ -30,18 +30,23 @@ class Osc < Formula
   uses_from_macos "libffi"
 
   resource "rpm" do
-    url "https://files.pythonhosted.org/packages/d3/36/3dae1ccf058414ee9cc1d39722216db0e0430002ce5008c0b0244f1886fd/rpm-0.3.1.tar.gz"
-    sha256 "d75c5dcb581f1e9c4f89cb6667e938e944c6e7c17dd96829e1553c39f3a4c961"
+    url "https://files.pythonhosted.org/packages/bd/ce/8db44d2b8fd6713a59e391d12b6816854b7bee8121ae7370c2d565de4265/rpm-0.4.0.tar.gz"
+    sha256 "79adbefa82318e2625d6e4fa16666cf88543498a1f2c10dc3879165d1dc3ecee"
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/ea/46/f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5/ruamel.yaml-0.18.10.tar.gz"
-    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
+    url "https://files.pythonhosted.org/packages/39/87/6da0df742a4684263261c253f00edd5829e6aca970fff69e75028cccc547/ruamel.yaml-0.18.14.tar.gz"
+    sha256 "7227b76aaec364df15936730efbf7d72b30c0b79b1d578bbb8e3dcb2d81f52b7"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/20/84/80203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5/ruamel.yaml.clib-0.2.12.tar.gz"
+    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   def install

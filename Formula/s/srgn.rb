@@ -1,19 +1,19 @@
 class Srgn < Formula
   desc "Code surgeon for precise text and code transplantation"
   homepage "https://github.com/alexpovel/srgn"
-  url "https://github.com/alexpovel/srgn/archive/refs/tags/srgn-v0.13.6.tar.gz"
-  sha256 "7786ef149d990cd70c5df541e066aeb79aff7d7fa60e4c59e92ccebf8e606b5b"
+  url "https://github.com/alexpovel/srgn/archive/refs/tags/srgn-v0.14.0.tar.gz"
+  sha256 "b6219c19214ad932b5df67c8ee00f32755014bf5ea2a1b6b57c6913c3124d202"
   license "MIT"
   head "https://github.com/alexpovel/srgn.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aee23758b050640fcd4a4aaf2497f46e3bd8810bac75c6045f07eec8c3ba242e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ecb27613159d40d6e53ae40dd2d6a3ac1cfd9df1d1da21c799af35802246b81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a5ab99bcbea2c4a1aaa3bc35653938fb62815f7cb2ac4a269c7a19531819e41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6372bbaab4b1b8f8456c2fb23c217a57ca16ab40f8f45a0bcff64c4ec9c68391"
-    sha256 cellar: :any_skip_relocation, ventura:       "66199b4bf91c3c3b690595ade9d5917cf5fc7e739520a812fbe950538d9c98d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d569e847346a9666f183b143d24cb9724eb8aeb6bed381fc0b12c188971c86e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c815e9b6270bbfb47dfe758a644eb66784898cacb0074441295421914cf1e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89afca697ec0afb55afbe31f14c294cc901d17c9abba1cb5f2d72f8e8b4f03b4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0733ebd9f017acbd960e332e97d155e2f07a3b9d8ec262bc07d5cbeb7b8dfba9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "62dc6bf77bf3db36d74ca388ece0329272152ddf3518b7b7dce8dfa505a4e245"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6117f3f6574d78d26834664f9cba9ad4ce8a74329dd8605010faf92ef8a8963"
+    sha256 cellar: :any_skip_relocation, ventura:       "958ca75e594858d8a4a2eacee9cf226d42555314de543b5f9f31008725aab742"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e35a1375edadf7c3db18100f0b369f90d55d863b1fabaaaa731df1f148290fa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d47e9c81e12337fb3c886452a2c226348c711eb480a4d69f03fc3e11c24a99c3"
   end
 
   depends_on "rust" => :build
@@ -25,10 +25,10 @@ class Srgn < Formula
   end
 
   test do
-    assert_match "H____", pipe_output("#{bin}/srgn '[a-z]' '_'", "Hello")
+    assert_match "H____", pipe_output("#{bin}/srgn '[a-z]' -- '_'", "Hello")
 
     test_string = "Hide ghp_th15 and ghp_th4t"
-    assert_match "Hide * and *", pipe_output("#{bin}/srgn '(ghp_[[:alnum:]]+)' '*'", test_string)
+    assert_match "Hide * and *", pipe_output("#{bin}/srgn '(ghp_[[:alnum:]]+)' -- '*'", test_string)
 
     assert_match version.to_s, shell_output("#{bin}/srgn --version")
   end

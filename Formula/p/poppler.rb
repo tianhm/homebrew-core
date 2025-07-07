@@ -1,8 +1,8 @@
 class Poppler < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-25.05.0.tar.xz"
-  sha256 "9b1627c5b76816ac5e4052a03f5b605ba40b45cf06b02cadd0479620b499ab38"
+  url "https://poppler.freedesktop.org/poppler-25.07.0.tar.xz"
+  sha256 "c504a9066dbdfebe377ad53cec641fd971ee96c4e1e8ca74e6c9c03d46d817ae"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Poppler < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "6c6526104230e40d95e50b7657eb567fc2a1fef0c117670a6f1b659aa86052bc"
-    sha256 arm64_sonoma:  "6056a3bc79fd3c1a85578ce8d26b570fec0592dc54bc10e02c979ac09efcb4c0"
-    sha256 arm64_ventura: "284d9f68f0ff027cce10f938193a750943a48b28a9fd561b50b58b1e72567e16"
-    sha256 sonoma:        "54ccf1788b4003b73d0c61449e1b67de5b395148336b10cfdbd1044e2991a544"
-    sha256 ventura:       "3f615edf94c296970f264ad47f8be82fc352d2bb6a0c2a89d6065a5b71ce02da"
-    sha256 arm64_linux:   "51582af2fe6a1e72fceae50f66b8f5719063cc052db83930685435c115c09d04"
-    sha256 x86_64_linux:  "a2852f19befc38347002466d6ee35d20088c0d3eef3055181712eff1ac1fcf09"
+    sha256 arm64_sequoia: "3560d3df79e931767f72b74169ca69959d6dba7c858bdec5b4d620f7ba69806d"
+    sha256 arm64_sonoma:  "2d78a5989af01748a7c1e9db1cece90dee62880d48842a3a6181a12d2e4bacf6"
+    sha256 arm64_ventura: "35145176d16b304e5be2cc6d5543357f469651272d86afccbbfed59855dfcb55"
+    sha256 sonoma:        "926084d4193ba342ff4a4c823de92c4b270c3e6e24d2d04c8df42949ebb1c175"
+    sha256 ventura:       "826d529e015d839b40a0219361b4c41ee13410ee357ab90eb37133ffe2d14df6"
+    sha256 arm64_linux:   "0a5083e99dbf0555c13322a7f9e0ae40813fc93c0c0f46b0627862b999a8957e"
+    sha256 x86_64_linux:  "cfeeaace6cb7b57b38e77ba86867a2c06de5b606853e16cda7b947e95ff94f92"
   end
 
   depends_on "cmake" => :build
@@ -53,6 +53,11 @@ class Poppler < Formula
   resource "font-data" do
     url "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz"
     sha256 "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74"
+
+    livecheck do
+      url "https://poppler.freedesktop.org/"
+      regex(/href=.*?poppler-data[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    end
   end
 
   def install

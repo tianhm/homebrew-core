@@ -1,8 +1,8 @@
 class SeleniumServer < Formula
   desc "Browser automation for testing purposes"
   homepage "https://www.selenium.dev/"
-  url "https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.29.0/selenium-server-4.29.0.jar"
-  sha256 "a20dd194f6d153b323e45f90275714de495b5d22f1587e1970d8e0a611c190c5"
+  url "https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.34.0/selenium-server-4.34.0.jar"
+  sha256 "c4ca7b2453abec28ac705cfc61321ba7ed62e886fbfd54c997b133d73c69c508"
   license "Apache-2.0"
 
   livecheck do
@@ -11,10 +11,14 @@ class SeleniumServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8a2eb77534e0d560659f5a97fa2ff8382b1a0e0f116d8c86f5a009a556dd2be0"
+    sha256 cellar: :any_skip_relocation, all: "798758819ac6c139c14969dc21d151c451daac6eb06d765ca8f7c72267ab117a"
   end
 
   depends_on "openjdk"
+
+  on_linux do
+    depends_on arch: :x86_64 # org.openqa.selenium.grid.config.ConfigException: No drivers for arm64 Linux
+  end
 
   def install
     libexec.install "selenium-server-#{version}.jar"

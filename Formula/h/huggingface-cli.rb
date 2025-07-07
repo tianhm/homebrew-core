@@ -2,29 +2,35 @@ class HuggingfaceCli < Formula
   include Language::Python::Virtualenv
 
   desc "Client library for huggingface.co hub"
-  homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/df/22/8eb91736b1dcb83d879bd49050a09df29a57cc5cd9f38e48a4b1c45ee890/huggingface_hub-0.30.2.tar.gz"
-  sha256 "9a7897c5b6fd9dad3168a794a8998d6378210f5b9688d0dfc180b1a228dc2466"
+  homepage "https://huggingface.co/docs/huggingface_hub/guides/cli"
+  url "https://files.pythonhosted.org/packages/fa/42/8a95c5632080ae312c0498744b2b852195e10b05a20b1be11c5141092f4c/huggingface_hub-0.33.2.tar.gz"
+  sha256 "84221defaec8fa09c090390cd68c78b88e3c4c2b7befba68d3dc5aacbc3c2c5f"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "86ed26b9bbbcf21c4455ac453a883203e5b996e38b2bb9520baf8a4340cf3ff3"
-    sha256 cellar: :any,                 arm64_sonoma:  "23fc5816693986c048bf17d71dcbe18f82fd3432d2c1c0eb24aba9539fd50205"
-    sha256 cellar: :any,                 arm64_ventura: "a88511d5f2bf276790e04774ced50313d8d1c54b5a0e03058e1f832ddcd8638f"
-    sha256 cellar: :any,                 sonoma:        "adaf5e83b1699e9a16ec7de13fbe40f8067cd050a9b2f181eecc76f2abd3bf61"
-    sha256 cellar: :any,                 ventura:       "6d9f217d8624c99714c2719ea25aa5e03c8c56e9796f3a699b66fea19c144ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fed5909c86e6848ad6728917760c16bdd989c4886b5122075e74eaa4c75f41ee"
+    sha256 cellar: :any,                 arm64_sequoia: "3cf0b1f74713644aff3088e271a0c3c1b1b1ffc2f39cf9b805f3924bf6b1e416"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf74ac768660b091b99ff346a3dde819ea2f069fbf879daa93b7e6030c6612cd"
+    sha256 cellar: :any,                 arm64_ventura: "7d409fd1f903d1de180749a4314a95ad8a3ac12eb9ed929df7e50c2739a3b415"
+    sha256 cellar: :any,                 sonoma:        "1acd7dc96c5fa45af8b7b803ae7d12ba086394f9666f9b3c71f38dd7c550a437"
+    sha256 cellar: :any,                 ventura:       "e5fda1f19777e88aa19e71ed90bc603e550d1126c863f884613b55aedfd047b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b92efa849269314d4f22409392029b3763fa8d1986417adbd4d2a52a86667e72"
   end
+
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build # for `hf-xet`
 
   depends_on "certifi"
   depends_on "git-lfs"
   depends_on "libyaml"
   depends_on "python@3.13"
 
+  on_linux do
+    depends_on "openssl@3"
+  end
+
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "filelock" do
@@ -33,8 +39,13 @@ class HuggingfaceCli < Formula
   end
 
   resource "fsspec" do
-    url "https://files.pythonhosted.org/packages/45/d8/8425e6ba5fcec61a1d16e41b1b71d2bf9344f1fe48012c2b48b9620feae5/fsspec-2025.3.2.tar.gz"
-    sha256 "e52c77ef398680bbd6a98c0e628fbc469491282981209907bbc8aea76a04fdc6"
+    url "https://files.pythonhosted.org/packages/00/f7/27f15d41f0ed38e8fcc488584b57e902b331da7f7c6dcda53721b15838fc/fsspec-2025.5.1.tar.gz"
+    sha256 "2e55e47a540b91843b755e83ded97c6e897fa0942b11490113f09e9c443c2475"
+  end
+
+  resource "hf-xet" do
+    url "https://files.pythonhosted.org/packages/ed/d4/7685999e85945ed0d7f0762b686ae7015035390de1161dcea9d5276c134c/hf_xet-1.1.5.tar.gz"
+    sha256 "69ebbcfd9ec44fdc2af73441619eeb06b94ee34511bbcf57cd423820090f5694"
   end
 
   resource "idna" do
@@ -68,8 +79,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "tqdm" do
@@ -78,13 +89,13 @@ class HuggingfaceCli < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "wcwidth" do

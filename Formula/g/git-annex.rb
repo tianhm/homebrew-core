@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20250416/git-annex-10.20250416.tar.gz"
-  sha256 "657e830ff6fa6de116e600f50fd14dda4a0e36250f5a3216255e1c560f6fa409"
+  url "https://hackage.haskell.org/package/git-annex-10.20250630/git-annex-10.20250630.tar.gz"
+  sha256 "03df602f2f72110d5a782a760399b64a57d37661f84aed6612d9d62d727459ed"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -13,13 +13,13 @@ class GitAnnex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "32408f862fac2d71c027c6670d30028ef9525d88ad3b7171a7c05024d76cf42c"
-    sha256 cellar: :any,                 arm64_sonoma:  "d708ae4e693a34da0dcf1fa1cdc355f6fb6ff67aa5c0b4d86ff76a221a7cfe45"
-    sha256 cellar: :any,                 arm64_ventura: "34cebd05c2a7b6fb70ffae9727d96590f0b90ca1c11d676abf11156d707e0609"
-    sha256 cellar: :any,                 sonoma:        "4eaef74f193dd44c5956759b06308361827fa4d1fdd6a2b34b8ca6127f1cff54"
-    sha256 cellar: :any,                 ventura:       "b83e57e99f8964a6059ceeb3f1d3b1dec25e751a0e5e2ec77aad54fc8fcc8946"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c1237c40a0fab841d15d05cdf0a46d3e1adf15ca442fc601cdd8fc9988ca9be5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa1720688c0d3565d2eff67353a7b8895a092788122ac7b28d7724a586786866"
+    sha256 cellar: :any,                 arm64_sequoia: "479b8a4312236700a75f5d7ce9f978e4caf3a0dc557733c27d28360e040a4692"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf852d739508cb7be0e0916bb7d03f0773d5cd79a5be8da3631c83a13dfd4106"
+    sha256 cellar: :any,                 arm64_ventura: "dbcc125879a94b74f26022518f64ad975c88bf794e6ef3689345167f1e81d7b9"
+    sha256 cellar: :any,                 sonoma:        "74c4a5a1283979814b7a0e2541d635b6ba1bb862257251857d7e6aa954b60287"
+    sha256 cellar: :any,                 ventura:       "3667b98e16d8908e73276a28d8d4da1881e505a38a2ee838ff79abc36b831b53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "466998bdc019abab7b61e99bb150b3b334b69a2f9b2770ec82e36b371fed1f74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "573e3a965f1333a85422a93acf8eeda885019b2d8f60c710e8d8c58d32344669"
   end
 
   depends_on "cabal-install" => :build

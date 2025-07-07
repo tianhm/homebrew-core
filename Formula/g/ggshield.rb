@@ -3,19 +3,19 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/a7/0d/9e5ab1da61c374af4cbf02800d83810f296f5397b53ff5ca0811e6424936/ggshield-1.39.0.tar.gz"
-  sha256 "801d27528a57e6bd6170163635d38d95735a14bfae7406d15de371a3b3f76cc6"
+  url "https://files.pythonhosted.org/packages/66/f5/25c4bbc960cb90e162534f701f799395cd5416ca80aacbee2831ce942666/ggshield-1.41.0.tar.gz"
+  sha256 "0cb8cd0e86e2012bb210be5a62416352bee5e366c4573874ce5cb225bf440207"
   license "MIT"
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8e69fb4af4ffbfbce4a4e2a5a1117f442ec7ed9f1b780040e2af8b8262d969a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2da9510b9abee13d569557991dda589fceeba2f74578655cca427667f38bedb"
-    sha256 cellar: :any,                 arm64_ventura: "4378a2fa26190b1a44f93923a3abf5c58ba449aa8981582af1ebccba89915df4"
-    sha256 cellar: :any,                 sonoma:        "18f9130c2db279738a6c52e865d7dec6077b685d1bca0551c3e947e3e061ce97"
-    sha256 cellar: :any,                 ventura:       "db423cd8f753f095fae62b6c73cf0d7e032b0f480a974e374c265c4ba6a9cd1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0af56ffb2b75a310ac3b99a2d647b9070402187a8553e65da3447a17fb2838d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c367dd69a5091dba5fe988dc3f0acdbdf29d8e18583e0970524e959087e09e8"
+    sha256 cellar: :any,                 arm64_sequoia: "a3b14ebe680d12dfbdf93d815d43028f7dea61ba9051aedb458ce1a0f7d7154a"
+    sha256 cellar: :any,                 arm64_sonoma:  "a97c07112c7da3167c7bd773b313fd03f7c538222ce096c7e162ffe2869e0e54"
+    sha256 cellar: :any,                 arm64_ventura: "cd5770ea2717f3a51a20a44795f1f662c7260c723d456b65206c93c3270c1f2f"
+    sha256 cellar: :any,                 sonoma:        "6390b5b338e9ea9f8f543ac5397ff50ddc05826b2f6b62139aa09a734c60806d"
+    sha256 cellar: :any,                 ventura:       "b44691730fc92ee73f886ecd8d7648f5706cf33246c1cbfd3e1f63284b721651"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cc1932c5c259790df880f04ef4c99828d23b627facca134e2206f138607f5d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ff433ce33f50962571dcdf949fddc8d064f6200fbe148904dd9cbd155b0ff82"
   end
 
   depends_on "certifi"
@@ -74,13 +74,13 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https://files.pythonhosted.org/packages/e9/40/781b19a576ded295b23263ee346dfad4e7b0e7b3fb35b8629f194a9f7bdd/pygitguardian-1.21.0.tar.gz"
-    sha256 "e934ab00ff8ead8c6b149dc358d594ba3de41e68a93c10c95d0b72faf9506dfc"
+    url "https://files.pythonhosted.org/packages/dd/8d/1895b125fb9c5b8cec697190c92b7e135c9642c2c396ad1cac54286fe325/pygitguardian-1.23.0.tar.gz"
+    sha256 "53d4c3019cc25a792b4e6e8788f137b98d0558a596aa0ba7bd4e2304cfd949ed"
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
-    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
   end
 
   resource "pyjwt" do
@@ -99,8 +99,8 @@ class Ggshield < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do
@@ -109,8 +109,8 @@ class Ggshield < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/44/80/97e25f0f1e4067677806084b7382a6ff9979f3d15119375c475c288db9d7/setuptools-80.0.0.tar.gz"
-    sha256 "c40a5b3729d58dd749c0f08f1a07d134fb8a0a3d7f87dc33e7c5e1f762138650"
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "truststore" do

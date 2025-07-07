@@ -6,16 +6,17 @@ class Buku < Formula
   url "https://github.com/jarun/buku/archive/refs/tags/v5.0.tar.gz"
   sha256 "87e226b0062a17cb10bf02a6cefea08e859d74985e373b76496150ecda92d73e"
   license "GPL-3.0-or-later"
+  revision 2
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67a9efc8bd9146c070de0df73a403253739c38c6aafcedcbe727258071d9dc03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba02ea77ed769704ff1a235c93fbb1b6bb813302e3b1a6f9b6cfff3da53020b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "57caf2d3ffc68bb83c8c55a7919fd76b99c0b4904f3f7fcc89c9e87a305e966c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "971a52b9651ace5ce3c9f67be33b8862eee03663e0fe6182e91caab7ec7490d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "0af9da744de39f784c8e05241f5c66d1636436d38004d7845880df506c90ffd7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b24da77400dfe97e1813e917d1622fc79a931112a694ffe7aef0ea24573d8bd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc63d7d45eff707fbcda4d753176a8fce382bb60ec4ccb624358765afe03277e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69fc60603b898f2d6d26726efc388051de7e1c65b76f85f1cdc38132b8512c15"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2227b666af396d4d3d2a83622feb4a105781ecbc44a0fc1f061abe396bfb69cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "21144834f453b881b0bb0fc83e87b8467ca1bf580ef17ba83fa532709ad65085"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8ab85a315f80f9caf22f476615559eb820327e3fc1fb913e75683853376c402"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b6d6a07e316007a09ff5841061432e63cf72f160bbf03f416ae8658d40a4b98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7f74fe9f592922d6d705f6e7eab029d21c88473dfad893c7310b84e03cd709"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b1e28bf4469b9e5774dfa9d533705c1a914b6d8518dd6e3bf34056bcd33110"
   end
 
   depends_on "certifi"
@@ -40,13 +41,13 @@ class Buku < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "flask" do
-    url "https://files.pythonhosted.org/packages/89/50/dff6380f1c7f84135484e176e0cac8690af72fa90e932ad2a0a60e28c69b/flask-3.1.0.tar.gz"
-    sha256 "5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac"
+    url "https://files.pythonhosted.org/packages/c0/de/e47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98/flask-3.1.1.tar.gz"
+    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
   end
 
   resource "flask-admin" do
@@ -100,18 +101,18 @@ class Buku < Formula
   end
 
   resource "types-python-dateutil" do
-    url "https://files.pythonhosted.org/packages/a9/60/47d92293d9bc521cd2301e423a358abfac0ad409b3a1606d8fbae1321961/types_python_dateutil-2.9.0.20241206.tar.gz"
-    sha256 "18f493414c26ffba692a72369fea7a154c502646301ebfe3d56a04b3767284cb"
+    url "https://files.pythonhosted.org/packages/ef/88/d65ed807393285204ab6e2801e5d11fbbea811adcaa979a2ed3b67a5ef41/types_python_dateutil-2.9.0.20250516.tar.gz"
+    sha256 "13e80d6c9c47df23ad773d54b2826bd52dbbb41be87c3f339381c1700ad21ee5"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https://files.pythonhosted.org/packages/d1/bc/51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5/typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
-    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
+    url "https://files.pythonhosted.org/packages/15/22/9ee70a2574a4f4599c47dd506532914ce044817c7752a79b6a51286319bc/urllib3-2.5.0.tar.gz"
+    sha256 "3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760"
   end
 
   resource "webencodings" do

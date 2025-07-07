@@ -1,21 +1,14 @@
 class Kea < Formula
   desc "DHCP server"
   homepage "https://www.isc.org/kea/"
+  url "https://ftp.isc.org/isc/kea/3.0.0/kea-3.0.0.tar.xz"
+  mirror "https://dl.cloudsmith.io/public/isc/kea-3-0/raw/versions/3.0.0/kea-3.0.0.tar.xz"
+  sha256 "bf963d1e10951d8c570c6042afccf27c709d45e03813bd2639d7bb1cfc4fee76"
   license "MPL-2.0"
+  head "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
 
-  stable do
-    # NOTE: the livecheck block is a best guess at excluding development versions.
-    #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
-    url "https://ftp.isc.org/isc/kea/2.6.2/kea-2.6.2.tar.gz"
-    mirror "https://dl.cloudsmith.io/public/isc/kea-2-6/raw/versions/2.6.2/kea-2.6.2.tar.gz"
-    sha256 "8a50b63103734b59c3b8619ccd6766d2dfee3f02e3a5f9f3abc1cd55f70fa424"
-
-    # Backport support for Boost 1.87.0
-    patch do
-      url "https://gitlab.isc.org/isc-projects/kea/-/commit/81edc181f85395c39964104ef049a195bafb9737.diff"
-      sha256 "17fd38148482e61be2192b19f7d05628492397d3f7c54e9097a89aeacf030072"
-    end
-  end
+  # NOTE: the livecheck block is a best guess at excluding development versions.
+  #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
 
   livecheck do
     url "ftp://ftp.isc.org/isc/kea/"
@@ -25,40 +18,36 @@ class Kea < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "0140ea7c9ede2d94efc51caadaf12c062c853d7d3d5cc68a26221b7a37226e83"
-    sha256 arm64_sonoma:  "59d717d80b87a2e491e1107105e04f9ef4caaf4d269f458558808777cfceed2e"
-    sha256 arm64_ventura: "e6a283e858cc2f08b3db91c7941f2eb0cacda7be81e58b00b8520356fe35e394"
-    sha256 sonoma:        "058ce5aeb4d71d54ebf0f6ff98ce7732c8e14d9d509588d48a05d23d488fe8bd"
-    sha256 ventura:       "a9bb4722c39d136fcc2641e78ffacdd58cbe1f3e3fb0fe1120e3141a046242a9"
-    sha256 arm64_linux:   "ceef0b2966ea631be071f02fb710cf6c3eaf319112203dec5977c45a7d30b0f1"
-    sha256 x86_64_linux:  "3db7bc8bbb9a06006c008c199d5412c1e76a771b5d96a769d8014fc65c9ebf4a"
+    sha256 arm64_sequoia: "f0e83d9140f20f6355907c13ff072dfe70132db802effe8d485b8cb01e1ef2d2"
+    sha256 arm64_sonoma:  "bf539cf6840a30b7b4b4fec39e24e63118cabb9c0035d9c3b36929d725df22c0"
+    sha256 arm64_ventura: "5ba48075f58961f427074a7b828dd18a5cf1b1c20015a009b25ac77db2c84e82"
+    sha256 sonoma:        "a94f296cdd03ec1b144daf89a0d39784c690faacd60dc1d58a3adeb0ce6de845"
+    sha256 ventura:       "1e0e8f7dc19a6e593793d59ff68e56efb5b7e78a7e0c4db8c43eba4bb888e820"
+    sha256 arm64_linux:   "b0bc98ac3a87fd3b035560adc0b6ebaa58b329026b9887f2de464dfbc32f9800"
+    sha256 x86_64_linux:  "4eda8328fcd0007696b0e3effd87578eab7b118bc058e4be7c6b2d5cda41f44a"
   end
 
-  head do
-    url "https://gitlab.isc.org/isc-projects/kea.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "bison" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.13" => :build
   depends_on "boost"
   depends_on "log4cplus"
   depends_on "openssl@3"
 
   def install
-    # Workaround to build with Boost 1.87.0+
-    ENV.append "CXXFLAGS", "-std=gnu++14"
+    # the build system looks for `sudo` to run some commands, but we don't want to use it
+    inreplace "meson.build",
+              "SUDO = find_program('sudo', required: false)",
+              "SUDO = find_program('', required: false)"
 
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", "--disable-silent-rules",
-                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
-                          "--sysconfdir=#{etc}",
-                          "--localstatedir=#{var}",
-                          *std_configure_args
-    system "make", "install"
+    system "meson", "setup", "build", "-Dcpp_std=c++20", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
+
+    # Remove the meson-info directory as it contains shim references
+    rm_r(pkgshare/"meson-info")
   end
 
   test do

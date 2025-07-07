@@ -28,13 +28,9 @@ class Dcadec < Formula
 
   # Ref https://github.com/foo86/dcadec/commit/b93deed1a231dd6dd7e39b9fe7d2abe05aa00158
   deprecate! date: "2024-06-30", because: :deprecated_upstream
+  disable! date: "2025-07-02", because: :deprecated_upstream
 
   conflicts_with "libdca", because: "both install `dcadec` binaries"
-
-  resource "homebrew-testdata" do
-    url "https://github.com/foo86/dcadec-samples/raw/fa7dcf8c98c6d/xll_71_24_96_768.dtshd"
-    sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
-  end
 
   def install
     system "make", "all"
@@ -42,6 +38,11 @@ class Dcadec < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://github.com/foo86/dcadec-samples/raw/fa7dcf8c98c6d/xll_71_24_96_768.dtshd"
+      sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
+    end
+
     resource("homebrew-testdata").stage do
       system bin/"dcadec", resource("homebrew-testdata").cached_download
     end

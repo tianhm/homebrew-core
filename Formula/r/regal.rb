@@ -1,18 +1,18 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
   homepage "https://docs.styra.com/regal"
-  url "https://github.com/StyraInc/regal/archive/refs/tags/v0.33.1.tar.gz"
-  sha256 "a441bd912e7b462674f039a46d77dcbe20da0bad1eb269746e3546d05c77d7e3"
+  url "https://github.com/StyraInc/regal/archive/refs/tags/v0.35.1.tar.gz"
+  sha256 "49bfa9e94f66fffebe963c886686cdf7a202f7d4fbe6ed59b02d13e0bd0e3fc3"
   license "Apache-2.0"
   head "https://github.com/StyraInc/regal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce4b288cc68ca5dd1b994e9939fb942931a45a34a24e9a79382c47a2b0bd7253"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a35bac092bea0583d31e51c45847dbb60a188a0a9a9de92ed5e4cfd3c4072dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7aad75bc3bf154d62cc4dd31783f122b6583c3aaefb60b867188bc582058cc13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "889d1339a8cae5085ea48ec0e0771269fd96e6e5280a485fcb252e608dd82638"
-    sha256 cellar: :any_skip_relocation, ventura:       "6ebfa3c2e985b406ff866c127a16a25db15112060456085ed27777965ccdaef0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66dc139aefda301f748840c692271b6adbe85e906d8fc67119a85d5ceac0409a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6439d599a24d1ab0885f6d082d7621b444b064ca0dcbb9e29f44fd1b8c33329e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cb5723eff3749720cb162afa189d81ad5424a8029feef8fb8d83c007eecbd9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c44af338f7b3f076f324dcb8a443416fc6af6cf0cd08ce72cb7092b4ee7e977"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04f0ac8650bd54f7a5a2d7d6b1e797afb11b212735e3d975710d078bed3a9953"
+    sha256 cellar: :any_skip_relocation, ventura:       "fddf29897e7e6d552887ac13513821a5aa5cdfa1e8640cd087de51da28236f6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "656fc7ad769f83109548130fe22248adb9de88b606401b48fcf33a8cafe07866"
   end
 
   depends_on "go" => :build
